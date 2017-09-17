@@ -125,12 +125,6 @@ void main(void)
 *********************************************************************************************************
 */
 
-
-/*
-REMINDER FOR FLAG BITS :	DONE	ROBOTB	ROBOTA	READY
-			(7 TO 4 UNUSED)	3		2		1		0
-*/
-
 void prep_robot_A(void* data)
 {
 	INT8U err;
@@ -140,7 +134,6 @@ void prep_robot_A(void* data)
 	while (1)
 	{
 
-		// À AJOUTER : ATTENDRE QUE LE CONTRÔLEUR ENVOIE UNE COMMANDE ET QUE LE TRANSPORT SOIT TERMINÉ
 		OSFlagPend(sync_flags, FLAG_DONE + FLAG_READY, OS_FLAG_WAIT_SET_ALL, 0, &err);
 		errMsg(err, "Error while trying to access sync_flags");
 
@@ -164,7 +157,6 @@ void prep_robot_A(void* data)
 		err = OSMutexPost(mutex_time_op);
 		errMsg(err, "Error while trying to post mutex_time_op");
 
-		// À AJOUTER : LEVER UN BIT SUR LE FLAG POUR INDIQUER QUE LE ROBOT A EST PRÊT
 		OSFlagPost(sync_flags, FLAG_ROBOTA, OS_FLAG_SET, &err);
 		errMsg(err, "Error while trying to access sync_flags");
 
@@ -200,7 +192,6 @@ void prep_robot_B(void* data)
 		err = OSMutexPost(mutex_time_op);
 		errMsg(err, "Error while trying to post mutex_time_op");
 
-		// À AJOUTER : LEVER UN BIT SUR LE FLAG POUR INDIQUER QUE LE ROBOT B EST PRÊT
 		OSFlagPost(sync_flags, FLAG_ROBOTB, OS_FLAG_SET, &err);
 		errMsg(err, "Error while trying to access sync_flags");
 
@@ -215,7 +206,6 @@ void transport(void* data)
 	printf("TACHE TRANSPORT @ %d : DEBUT. \n", OSTimeGet() - startTime);
 	while (1)
 	{
-		// À AJOUTER : ATTENDRE QUE LES DEUX BITS PROVENANT DES ROBOTS SOIENT LEVÉS
 		OSFlagPend(sync_flags, FLAG_ROBOTA + FLAG_ROBOTB, OS_FLAG_WAIT_SET_ALL, 0, &err);
 		errMsg(err, "Error while trying to access sync_flags");
 		OSFlagPost(sync_flags, FLAG_ROBOTA + FLAG_ROBOTB, OS_FLAG_CLR, &err);
@@ -226,7 +216,6 @@ void transport(void* data)
 		OSTimeDly(150);
 		printf("TACHE TRANSPORT COMMANDE #%d @ %d : Fin du transport.\n", orderNumber, OSTimeGet() - startTime);
 
-		// À AJOUTER : DÉCRÉMENTER LE COMPTEUR GLOBAL DE COMMANDES RESTANTES
 		OSMutexPend(mutex_commands, 0, &err);
 		errMsg(err, "Error while trying to access mutex_commands");
 		commands_left--;
@@ -237,7 +226,6 @@ void transport(void* data)
 		err = OSMutexPost(mutex_commands);
 		errMsg(err, "Error while trying to post mutex_commands");
 
-		// À AJOUTER : LEVER UN BIT SUR LE FLAG POUR INDIQUER QUE LE TRANSPORT EST TERMINÉ
 		OSFlagPost(sync_flags, FLAG_DONE, OS_FLAG_SET, &err);
 		errMsg(err, "Error while trying to access sync_flags");
 		
@@ -258,10 +246,9 @@ void controller(void* data)
 
 		printf("TACHE CONTROLLER @ %d : COMMANDE #%d. \n", OSTimeGet() - startTime, i);
 
-		// À AJOUTER : LEVER UN BIT SUR LE FLAG POUR INDIQUER QU'UNE COMMANDE EST PRÊTE
 		OSFlagPost(sync_flags, FLAG_READY, OS_FLAG_SET, &err);
 		errMsg(err, "Error while trying to access sync_flags");
-		// À AJOUTER : INCRÉMENTER LE COMPTEUR GLOBAL DE COMMANDES RESTANTES
+
 		OSMutexPend(mutex_commands, 0, &err);
 		errMsg(err, "Error while trying to access mutex_commands");
 		commands_left++;
