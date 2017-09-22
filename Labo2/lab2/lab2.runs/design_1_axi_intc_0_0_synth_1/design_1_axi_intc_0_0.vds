@@ -1,0 +1,95 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Sep 22 13:10:13 2017
+# Process ID: 131548
+# Current directory: X:/Bureau/INF3610/Labo2/lab2/lab2.runs/design_1_axi_intc_0_0_synth_1
+# Command line: vivado.exe -log design_1_axi_intc_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_intc_0_0.tcl
+# Log file: X:/Bureau/INF3610/Labo2/lab2/lab2.runs/design_1_axi_intc_0_0_synth_1/design_1_axi_intc_0_0.vds
+# Journal file: X:/Bureau/INF3610/Labo2/lab2/lab2.runs/design_1_axi_intc_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_axi_intc_0_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 338.566 ; gain = 77.270
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_intc_0_0' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_intc_0_0/synth/design_1_axi_intc_0_0.vhd:85]
+INFO: [Synth 8-638] synthesizing module 'axi_intc' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/d685/hdl/axi_intc_v4_1_vh_rfs.vhd:3769]
+INFO: [Synth 8-638] synthesizing module 'intc_core' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/d685/hdl/axi_intc_v4_1_vh_rfs.vhd:782]
+INFO: [Synth 8-256] done synthesizing module 'intc_core' (1#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/d685/hdl/axi_intc_v4_1_vh_rfs.vhd:782]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized3' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized3' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized4' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized4' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized5' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized5' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized6' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized6' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized7' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized7' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized8' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized8' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized9' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized9' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized10' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized10' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized11' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized11' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized12' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized12' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized13' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized13' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized14' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized14' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized15' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized15' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized16' [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized16' (2#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (3#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (4#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (5#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/0ba0/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_intc' (6#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ipshared/d685/hdl/axi_intc_v4_1_vh_rfs.vhd:3769]
+INFO: [Synth 8-256] done synthesizing module 'design_1_axi_intc_0_0' (7#1) [x:/Bureau/INF3610/Labo2/lab2/lab2.srcs/sources_1/bd/design_1/ip/design_1_axi_intc_0_0/synth/design_1_axi_intc_0_0.vhd:85]
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 380.895 ; gain = 119.598
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 380.895 ; gain = 119.598
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 706.754 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:01:28 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:01:28 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:01:28 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:01:29 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:01:31 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:01:57 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Timing Optimization : Time (s): cpu = 00:00:59 ; elapsed = 00:01:58 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Technology Mapping : Time (s): cpu = 00:00:59 ; elapsed = 00:01:58 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     2|
+|2     |LUT2 |    12|
+|3     |LUT3 |    13|
+|4     |LUT4 |    16|
+|5     |LUT5 |    40|
+|6     |LUT6 |    24|
+|7     |FDRE |    74|
+|8     |FDSE |     1|
++------+-----+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:00 ; elapsed = 00:02:00 . Memory (MB): peak = 706.754 ; gain = 445.457
+synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:02:03 . Memory (MB): peak = 706.754 ; gain = 446.082
