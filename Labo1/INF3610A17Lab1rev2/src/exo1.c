@@ -36,6 +36,13 @@
 #define TASK4_ID    		3
 #define TASK5_ID    		3
 
+// Nouveaux defines
+#define TASK1_NEWPRIO		11
+#define TASK2_NEWPRIO		10
+#define TASK3_NEWPRIO		12
+#define TASK4_NEWPRIO		13
+#define TASK5_NEWPRIO		14
+
 /*
 *********************************************************************************************************
 *                                          SHARED  VARIABLES
@@ -73,27 +80,27 @@ void main(void)
 	// à compléter
 	OSInit();
 	
-	if (err = (OSTaskCreate(*Task1, NULL, &Task1Stk[TASK_STK_SIZE - 1], 11)) != OS_NO_ERR) {
+	if (err = (OSTaskCreate(*Task1, NULL, &Task1Stk[TASK_STK_SIZE - 1], TASK1_NEWPRIO)) != OS_NO_ERR) {
 		printf("Error lors de la création de la tâche 1.");
 		
 	}
 
-	if (err = (OSTaskCreate(*Task2, NULL, &Task2Stk[TASK_STK_SIZE - 1], 10)) != OS_NO_ERR) {
+	if (err = (OSTaskCreate(*Task2, NULL, &Task2Stk[TASK_STK_SIZE - 1], TASK2_NEWPRIO)) != OS_NO_ERR) {
 		printf("Error lors de la création de la tâche 2.");
 
 	}
 
-	if (err = (OSTaskCreate(*Task3, NULL, &Task3Stk[TASK_STK_SIZE - 1], 12)) != OS_NO_ERR) {
+	if (err = (OSTaskCreate(*Task3, NULL, &Task3Stk[TASK_STK_SIZE - 1], TASK3_NEWPRIO)) != OS_NO_ERR) {
 		printf("Error lors de la création de la tâche 3.");
 
 	}
 
-	if (err = (OSTaskCreate(*Task4, NULL, &Task4Stk[TASK_STK_SIZE - 1], 13)) != OS_NO_ERR) {
+	if (err = (OSTaskCreate(*Task4, NULL, &Task4Stk[TASK_STK_SIZE - 1], TASK4_NEWPRIO)) != OS_NO_ERR) {
 		printf("Error lors de la création de la tâche 4.");
 
 	}
 
-	if (err = (OSTaskCreate(*Task5, NULL, &Task5Stk[TASK_STK_SIZE - 1], 14)) != OS_NO_ERR) {
+	if (err = (OSTaskCreate(*Task5, NULL, &Task5Stk[TASK_STK_SIZE - 1], TASK5_NEWPRIO)) != OS_NO_ERR) {
 		printf("Error lors de la création de la tâche 5.");
 
 	}
