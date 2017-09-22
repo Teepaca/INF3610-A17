@@ -58,6 +58,7 @@ void timer_isr(void* not_valid) {
 
 void fit_timer_1s_isr(void *not_valid) {
 	/* À compléter */
+
 }
 
 void fit_timer_3s_isr(void *not_valid) {
@@ -66,6 +67,7 @@ void fit_timer_3s_isr(void *not_valid) {
 
 void gpio_isr(void * not_valid) {
 	/* À compléter */
+	XGpio_InterruptClear(&gpSwitch, 0xFFFFFFFF);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
