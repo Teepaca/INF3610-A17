@@ -20,6 +20,13 @@
 #define          TASK_PRINT2_PRIO          13
 #define          TASK_PRINT3_PRIO          14
 
+// User-defined mutex prios
+#define	MUTEX_PCREESTRAITES_PRIO	7
+#define MUTEX_PSOURCEREJETE_PRIO	6
+#define MUTEX_RUNNING_PRIO			5
+#define MUTEX_PRINTING_PRIO			4
+#define MUTEX_MEMORY_PRIO			3
+
 // Routing info.
 #define INT1_LOW      0x00000000
 #define INT1_HIGH     0x3FFFFFFF
