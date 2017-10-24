@@ -43,7 +43,8 @@ OS_EVENT* semStats;
  **************************************************/
 /* À compléter */
 
-OS_EVENT* mutexPacketCreesTraites;
+OS_EVENT* mutexPacketCrees;
+OS_EVENT* mutexPacketTraites;
 OS_EVENT* mutexPacketSourceRejete;
 OS_EVENT* mutexRunning;
 OS_EVENT* mutexPrinting;
@@ -167,22 +168,13 @@ int create_tasks() {
 		xil_printf("Error when creating task : TaskForwarding");
 	}
 
-	print_param[0].Mbox = mbox[0];
-	print_param[0].interfaceID = 1;
-
 	if ((err = (OSTaskCreate(TaskPrint, &print_param[0], &TaskPrint1Stk[TASK_STK_SIZE-1], TASK_PRINT1_PRIO))) != OS_NO_ERR) {
 		xil_printf("Error when creating task : TaskPrint (1)");
 	}
 
-	print_param[1].Mbox = mbox[1];
-	print_param[1].interfaceID = 2;
-
 	if ((err = (OSTaskCreate(TaskPrint, &print_param[1], &TaskPrint2Stk[TASK_STK_SIZE-1], TASK_PRINT2_PRIO))) != OS_NO_ERR) {
 		xil_printf("Error when creating task : TaskPrint (2)");
 	}
-
-	print_param[2].Mbox = mbox[2];
-	print_param[2].interfaceID = 3;
 
 	if ((err = (OSTaskCreate(TaskPrint, &print_param[2], &TaskPrint3Stk[TASK_STK_SIZE-1], TASK_PRINT3_PRIO))) != OS_NO_ERR) {
 		xil_printf("Error when creating task : TaskPrint (3)");
@@ -223,6 +215,10 @@ int create_events() {
 		if (!(mbox[i] = OSMboxCreate(NULL))) {
 			xil_printf("Error when creating mailbox : mbox[%d]", i);
 		}
+		else {
+			print_param[i].Mbox = mbox[i];
+			print_param[i].interfaceID = i+1;
+		}
 	}
 
 	if (!(semStop = OSSemCreate(0))) {
@@ -237,8 +233,11 @@ int create_events() {
 		xil_printf("Error when creating semaphore : semStats");
 	}
 
-	mutexPacketCreesTraites = OSMutexCreate(MUTEX_PCREESTRAITES_PRIO, &err);
-	err_msg("mutexPacketCreesTraites", err);
+	mutexPacketCrees = OSMutexCreate(MUTEX_PCREES_PRIO, &err);
+	err_msg("mutexPacketCrees", err);
+
+	mutexPacketTraites = OSMutexCreate(MUTEX_PTRAITES_PRIO, &err);
+	err_msg("mutexPacketTraites", err);
 
 	mutexPacketSourceRejete = OSMutexCreate(MUTEX_PSOURCEREJETE_PRIO, &err);
 	err_msg("mutexPacketSourceRejete", err);
@@ -277,7 +276,7 @@ void TaskGeneratePacket(void *data) {
 	srand(42);
 	uint8_t err;
 	bool isGenPhase = true; 		//Indique si on est dans la phase de generation ou non
-	const bool shouldSlowThingsDown = true;		//Variable à modifier
+	const bool shouldSlowThingsDown = false;		//Variable à modifier
 	int packGenQty = (rand() % 250);
 	while(true) {
 		if (isGenPhase) {
@@ -292,7 +291,11 @@ void TaskGeneratePacket(void *data) {
 				packet->data[i] = (unsigned int)rand();
 			packet->data[0] = nbPacketCrees;
 
+			OSMutexPend(mutexPacketCrees, 0, &err);
+			err_msg("Pend mutexPacketCrees", err);
 			nbPacketCrees++;
+			err = OSMutexPost(mutexPacketCrees);
+			err_msg("Post mutexPacketCrees", err);
 
 			if (shouldSlowThingsDown) {
 				OSMutexPend(mutexPrinting, 0, &err);
@@ -418,12 +421,6 @@ void TaskReset(void *data) {
 			if ((err = OSTaskResume(TASK_GENERATE_PRIO)) != OS_NO_ERR) {
 				err_msg("ResumeGenerate TaskReset", err);
 			}
-			if ((err = OSTaskResume(TASK_COMPUTING_PRIO)) != OS_NO_ERR) {
-				err_msg("ResumeComputing TaskReset", err);
-			}
-			if ((err = OSTaskResume(TASK_FORWARDING_PRIO)) != OS_NO_ERR) {
-				err_msg("ResumeForwarding TaskReset", err);
-			}
 			if ((err = OSTaskResume(TASK_PRINT1_PRIO)) != OS_NO_ERR) {
 				err_msg("ResumePrint1 TaskReset", err);
 			}
@@ -433,6 +430,13 @@ void TaskReset(void *data) {
 			if ((err = OSTaskResume(TASK_PRINT3_PRIO)) != OS_NO_ERR) {
 				err_msg("ResumePrint3 TaskReset", err);
 			}
+			if ((err = OSTaskResume(TASK_COMPUTING_PRIO)) != OS_NO_ERR) {
+				err_msg("ResumeComputing TaskReset", err);
+			}
+			if ((err = OSTaskResume(TASK_FORWARDING_PRIO)) != OS_NO_ERR) {
+				err_msg("ResumeForwarding TaskReset", err);
+			}
+
 			OSMutexPend(mutexPrinting, 0, &err);
 			err_msg("Pend mutexPrinting", err);
 			xil_printf("RESUMING STOPPED TASKS\n");
@@ -471,25 +475,33 @@ void TaskComputing(void *pdata) {
 		packet = OSQPend(inputQ, 0, &err);
 		err_msg("inputQ", err);
 
-		while (--waitCnt);
+		while (--waitCnt); // Attente active
+		waitCnt = 220000;
 
 		if ((packet->src >= REJECT_LOW1 && packet->src <= REJECT_HIGH1)|
 			(packet->src >= REJECT_LOW2 && packet->src <= REJECT_HIGH2)|
 			(packet->src >= REJECT_LOW3 && packet->src <= REJECT_HIGH3)|
 			(packet->src >= REJECT_LOW4 && packet->src <= REJECT_HIGH4)){
-			OSMutexPend(mutexPacketCreesTraites, 0, &err);
+
+			OSMutexPend(mutexPacketSourceRejete, 0, &err);
+			err_msg("Pend mutexPacketSourceRejete", err);
+			nbPacketSourceRejete++;
+			err = OSMutexPost(mutexPacketSourceRejete);
+			err_msg("Post mutexPacketSourceRejete", err);
+
+			OSMutexPend(mutexMemory, 0, &err);
 			err_msg("Pend mutexMemory", err);
 			free(packet);
-			err = OSMutexPost(mutexPacketCreesTraites);
+			err = OSMutexPost(mutexMemory);
 			err_msg("Post mutexMemory", err);
 		}
 		else if (packet->type == PACKET_VIDEO) {
 			err = OSQPost(highQ, packet);
 			if (err == OS_ERR_Q_FULL){
-				OSMutexPend(mutexPacketCreesTraites, 0, &err);
+				OSMutexPend(mutexMemory, 0, &err);
 				err_msg("Pend mutexMemory", err);
 				free(packet);
-				err = OSMutexPost(mutexPacketCreesTraites);
+				err = OSMutexPost(mutexMemory);
 				err_msg("Post mutexMemory", err);
 				err = OSMutexPost(mutexPrinting);
 				err_msg("Post mutexPrinting", err);
@@ -501,14 +513,21 @@ void TaskComputing(void *pdata) {
 			else if (err != OS_NO_ERR) {
 				err_msg("highQ", err);
 			}
+			else {
+				OSMutexPend(mutexPacketTraites, 0, &err);
+				err_msg("Pend mutexPacketTraites", err);
+				nbPacketTraites++;
+				err = OSMutexPost(mutexPacketTraites);
+				err_msg("Post mutexPacketTraites", err);
+			}
 		}
 		else if (packet->type == PACKET_AUDIO) {
 			err = OSQPost(mediumQ, packet);
 			if (err == OS_ERR_Q_FULL){
-				OSMutexPend(mutexPacketCreesTraites, 0, &err);
+				OSMutexPend(mutexMemory, 0, &err);
 				err_msg("Pend mutexMemory", err);
 				free(packet);
-				err = OSMutexPost(mutexPacketCreesTraites);
+				err = OSMutexPost(mutexMemory);
 				err_msg("Post mutexMemory", err);
 				err = OSMutexPost(mutexPrinting);
 				err_msg("Post mutexPrinting", err);
@@ -519,14 +538,21 @@ void TaskComputing(void *pdata) {
 			else if (err != OS_NO_ERR) {
 				err_msg("mediumQ", err);
 			}
+			else {
+				OSMutexPend(mutexPacketTraites, 0, &err);
+				err_msg("Pend mutexPacketTraites", err);
+				nbPacketTraites++;
+				err = OSMutexPost(mutexPacketTraites);
+				err_msg("Post mutexPacketTraites", err);
+			}
 		}
 		else if (packet->type == PACKET_AUTRE) {
 			err = OSQPost(lowQ, packet);
 			if (err == OS_ERR_Q_FULL){
-				OSMutexPend(mutexPacketCreesTraites, 0, &err);
+				OSMutexPend(mutexMemory, 0, &err);
 				err_msg("Pend mutexMemory", err);
 				free(packet);
-				err = OSMutexPost(mutexPacketCreesTraites);
+				err = OSMutexPost(mutexMemory);
 				err_msg("Post mutexMemory", err);
 				err = OSMutexPost(mutexPrinting);
 				err_msg("Post mutexPrinting", err);
@@ -536,6 +562,13 @@ void TaskComputing(void *pdata) {
 			}
 			else if (err != OS_NO_ERR) {
 				err_msg("lowQ", err);
+			}
+			else {
+				OSMutexPend(mutexPacketTraites, 0, &err);
+				err_msg("Pend mutexPacketTraites", err);
+				nbPacketTraites++;
+				err = OSMutexPost(mutexPacketTraites);
+				err_msg("Post mutexPacketTraites", err);
 			}
 		}
 		else {
@@ -561,6 +594,60 @@ void TaskForwarding(void *pdata) {
 	Packet *packet = NULL;
 	while(true){
 		/* À compléter */
+		packet = OSQAccept(highQ, &err);
+		if (err != OS_ERR_Q_EMPTY) {
+			err_msg("OSQAccept highQ", err);
+		}
+		if (packet == NULL) {
+			packet = OSQAccept(mediumQ, &err);
+			if (err != OS_ERR_Q_EMPTY) {
+				err_msg("OSQAccept mediumQ", err);
+			}
+			if (packet == NULL) {
+				packet = OSQAccept(lowQ, &err);
+				if (err != OS_ERR_Q_EMPTY) {
+					err_msg("OSQAccept lowQ", err);
+				}
+			}
+		}
+		if (packet != NULL) {
+			if (packet->dst >= INT1_LOW && packet->dst <= INT1_HIGH) {
+				err = OSMboxPost(mbox[0], packet);
+				err_msg("OSMboxPost INT1", err);
+			}
+			else if (packet->dst >= INT2_LOW && packet->dst <= INT2_HIGH) {
+				err = OSMboxPost(mbox[1], packet);
+				err_msg("OSMboxPost INT2", err);
+			}
+			else if (packet->dst >= INT3_LOW && packet->dst <= INT3_HIGH) {
+				err = OSMboxPost(mbox[2], packet);
+				err_msg("OSMboxPost INT3", err);
+			}
+			else if (packet->dst >= INT_BC_LOW && packet->dst <= INT_BC_HIGH) {
+				OSMutexPend(mutexMemory, 0, &err);
+				err_msg("mutexMemory", err);
+				Packet *packet2 = malloc(sizeof(Packet));
+				Packet *packet3 = malloc(sizeof(Packet));
+				*packet2 = *packet;
+				*packet3 = *packet;
+				err = OSMutexPost(mutexMemory);
+				err_msg("mutexMemory", err);
+
+				err = OSMboxPost(mbox[0], packet);
+				err_msg("OSMboxPost BC", err);
+				err = OSMboxPost(mbox[1], packet2);
+				err_msg("OSMboxPost BC", err);
+				err = OSMboxPost(mbox[2], packet3);
+				err_msg("OSMboxPost BC", err);
+			}
+			else {
+				OSMutexPend(mutexPrinting, 0, &err);
+				err_msg("mutexPrinting", err);
+				xil_printf("WARNING : Incorrect packet destination!\n");
+				err = OSMutexPost(mutexPrinting);
+				err_msg("mutexPrinting", err);
+			}
+		}
 
 	}
 }
@@ -580,24 +667,13 @@ void TaskStats(void *pdata) {
 		OSSemPend(semStats, 0, &err);
 		err_msg("semStats", err);
 
-		err = OSMutexPost(mutexPrinting);
-		err_msg("Post mutexPrinting", err);
+		OSMutexPend(mutexPrinting, 0, &err);
+		err_msg("Pend mutexPrinting", err);
 
 		xil_printf("\n------------------ Affichage des statistiques ------------------\n");
-
-		OSMutexPend(mutexPacketCreesTraites, 0, &err);
-		err_msg("Pend mutexPacketCrees", err);
 		xil_printf("Nb de packets total créés : %d\n",nbPacketCrees);
 		xil_printf("Nb de packets total traités : %d\n", nbPacketTraites);
-		err = OSMutexPost(mutexPacketCreesTraites);
-		err_msg("Post mutexPacketCreesTraites", err);
-
-		OSMutexPend(mutexPacketSourceRejete, 0, &err);
-		err_msg("Pend mutexPacketSourceRejete", err);
 		xil_printf("Nb de packets rejetés pour mauvaise source : %d\n",nbPacketSourceRejete);
-		err = OSMutexPost(mutexPacketSourceRejete);
-		err_msg("Post mutexPacketSourceRejete", err);
-
 		err = OSMutexPost(mutexPrinting);
 		err_msg("Post mutexPrinting", err);
 
@@ -618,6 +694,30 @@ void TaskPrint(void *data) {
 
 	while(true){
 		/* À compléter */
+		packet = OSMboxPend(mb, 0, &err);
+		err_msg("OSMboxPend TaskPrint", err);
+
+		if (packet != NULL) {
+			OSMutexPend(mutexPrinting, 0, &err);
+			err_msg("mutexPrinting", err);
+			xil_printf("INT %d - SRC %08x - DST %08x - TYPE %d - DATA %x\n", intID, packet->src, packet->dst, packet->type, packet->data);
+			err = OSMutexPost(mutexPrinting);
+			err_msg("mutexPrinting", err);
+
+			OSMutexPend(mutexMemory, 0, &err);
+			err_msg("mutexMemory", err);
+			free(packet);
+			err = OSMutexPost(mutexMemory);
+			err_msg("mutexMemory", err);
+		}
+		else {
+			OSMutexPend(mutexPrinting, 0, &err);
+			err_msg("mutexPrinting", err);
+			xil_printf("WARNING : NULL packet received!\n");
+			err = OSMutexPost(mutexPrinting);
+			err_msg("mutexPrinting", err);
+		}
+
 	}
 
 }
