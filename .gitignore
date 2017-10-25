@@ -387,3 +387,7 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+
+# Don't exclude Word and PDF files
+!*.docx
+!*.pdf
