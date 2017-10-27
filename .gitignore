@@ -391,3 +391,11 @@ OpenCover/
 # Don't exclude Word and PDF files
 !*.docx
 !*.pdf
+
+!*.cpp
+!*.bmp
+!*.mem
+!*.sln
+!*.hpp
+!*.vcxproj*
+!*.exe

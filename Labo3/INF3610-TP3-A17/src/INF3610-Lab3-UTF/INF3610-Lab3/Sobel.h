@@ -9,7 +9,7 @@
 #include <systemc.h>
 #include <stdio.h>
 #include "InterfaceRead.h"
-//#include "InterfaceWrite.h"		à décommenter au moment opportun
+#include "InterfaceWrite.h"		//à décommenter au moment opportun
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -37,5 +37,6 @@ class Sobel : public sc_module
 		
 		void thread(void);
 		uint8_t sobel_operator(const int index, const int imgWidth, uint8_t * image);
+
 };
 
