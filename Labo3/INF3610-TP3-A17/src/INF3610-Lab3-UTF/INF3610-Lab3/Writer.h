@@ -9,7 +9,7 @@
 //	Class Writer
 //
 ///////////////////////////////////////////////////////////////////////////////
-class Writer : public sc_module, public InterfaceWrite
+class Writer : public sc_channel, public InterfaceWrite
 {
 public:
 	// Ports

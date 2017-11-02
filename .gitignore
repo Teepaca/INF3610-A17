@@ -399,3 +399,6 @@ OpenCover/
 !*.hpp
 !*.vcxproj*
 !*.exe
+!*.hpp
+!*.lib
+

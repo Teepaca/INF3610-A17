@@ -15,7 +15,7 @@
 //	Class Reader
 //
 ///////////////////////////////////////////////////////////////////////////////
-class Reader : public sc_module, public InterfaceRead /* À compléter */
+class Reader : public sc_channel, public InterfaceRead /* À compléter */
 {
 	public:
 		// Ports
