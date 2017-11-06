@@ -50,9 +50,6 @@ void Sobel::thread(void)
 	unsigned int height = 0;
 	unsigned int data = 0x00000000;
 	uint8_t* image = NULL;
-	//uint8_t* sobel_image = NULL;
-	unsigned int cur_w = 0;
-	unsigned int cur_h = 0;
 
 	while (true) {
 

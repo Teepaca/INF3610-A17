@@ -44,7 +44,11 @@ class Sobelv2 : public sc_module
 		/*
 			À compléter
 		*/
+		SC_HAS_PROCESS(Sobelv2);
 		
 		void thread(void);
+		unsigned int Sobelv2::Read(const unsigned int addr);
+		void Sobelv2::Write(const unsigned int addr, const unsigned int writeData);
+		void Sobelv2::CacheRead(const unsigned int addr, unsigned int* addressData, const unsigned int lgt);
 		uint8_t Sobelv2_operator(const int index, const int imgWidth, uint8_t * image);
 };

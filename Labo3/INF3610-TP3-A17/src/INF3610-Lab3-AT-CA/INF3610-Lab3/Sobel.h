@@ -14,7 +14,7 @@
 //	Class Sobel
 //
 ///////////////////////////////////////////////////////////////////////////////
-class Sobel /* À compléter */
+class Sobel : sc_module/* À compléter */
 {
 	public: 
 		// Ports
@@ -39,8 +39,11 @@ class Sobel /* À compléter */
 		À compléter
 		
 		*/
+		SC_HAS_PROCESS(Sobel);
 
 		
 		void thread(void);
+		unsigned int Sobel::Read(const unsigned int addr);
+		void Sobel::Write(const unsigned int addr, const unsigned int writeData);
 		uint8_t Sobel::sobel_operator(const int index, const int imgWidth, uint8_t * image);
 };
