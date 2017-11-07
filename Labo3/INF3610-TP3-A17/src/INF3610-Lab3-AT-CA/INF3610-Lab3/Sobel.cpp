@@ -107,9 +107,14 @@ void Sobel::thread(void)
 					wait(12*4); // On attend 12 cycles d'horloge par pixel. 9 cycles sont alloués aux opérations de type MAC (multiplication-accumulation),
 					// qui sont effectuées en parallèle pour les matrices X et Y (3x3 pixels). 3 cycles supplémentaires sont alloués aux opérations effectuées
 					// sur edge_weight et edge_val, afin d'obtenir un flot d'exécution complètement pipeliné. Puisque l'on traite 4 pixels à la fois dans cette
-					// boucle d'écriture, on multiplie l'attente par 4 pour simuler une exécution individuelle. Il serait possible de ne pas multiplier si l'on
-					// supposait que la mémoire était accessible par des unités de calcul en parallèle (donc 4 blocs de 2 unités MAC; une pour X, une pour Y).
-					// Toutefois, on ne croit pas qu'il soit possible pour cette mémoire de fournir des données provenant de plusieurs adresses différentes à la fois.
+					// boucle d'écriture, on multiplie l'attente par 4 pour simuler une exécution individuelle. On pourrait également dérouler (unroll)
+					// la boucle de traitement des matrices X et Y afin que le calcul s'effectue en parallèle (donc 18 multiplications à la fois), ce qui
+					// couperait cette partie de l'exécution à un seul cycle (plus les 3 autres cycles pour les opérations d'addition et la condition).
+					// Il serait également possible de pipeliner l'exécution pour qu'une autre donnée soit chargée lors du traitement de la précédente
+					// par les multiplicateurs. On réduirait ainsi le temps d'attente à 12 cycles pour le premier pixel + 1 cycle par pixel supplémentaire,
+					// en assumant un pipeline suffisamment profond (permettant le chargement/traitement de 12 données à la fois). À la limite, il
+					// serait possible de combiner un déroulement et un pipeline pour maximiser le débit de traitement. Cela requièrerait toutefois de
+					// nombreux accès mémoire concurrents, qui seraient potentiellement difficiles à réaliser.
 					Write(8 + i*width + j,
 						(j != 0 ? (sobel_operator((i*width + j), width, image)) : 0) +
 						(sobel_operator((i*width + j + 1), width, image) << 8) +
