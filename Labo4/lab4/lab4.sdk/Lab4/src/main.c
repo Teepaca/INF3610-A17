@@ -98,7 +98,63 @@ static inline FRESULT f_umount()
 uint8_t * getFileContents(const char* fileName, FILINFO * fInfo)
 {
 	// À implémenter
-	return NULL;
+	FATFS *fs;
+	FIL fp;
+	uint8_t * contents = NULL;
+	uint bytesRead;
+	FRESULT err;
+
+	fs = malloc(sizeof(FATFS));
+
+	if ((err = f_mount(fs, "", 0)) != FR_OK) {
+		xil_printf("Filesystem could not be mounted.\n");
+		xil_printf("Code d'erreur : %d", err);
+		return NULL;
+	}
+
+	if ((err = f_stat(fileName, fInfo)) != FR_OK) {
+		xil_printf("File info could not be obtained.\n");
+		xil_printf("Code d'erreur : %d", err);
+		return NULL;
+	}
+
+	contents = malloc(fInfo->fsize);
+
+	if ((err = f_open(&fp, fileName, FA_READ | FA_OPEN_EXISTING)) != FR_OK) {
+		xil_printf("File could not be opened.\n");
+		xil_printf("Code d'erreur : %d", err);
+		return NULL;
+	}
+
+	if ((err = f_read(&fp, (void*)contents, fInfo->fsize, &bytesRead)) != FR_OK) {
+		xil_printf("File could not be read.\n");
+		if ((err = f_close(&fp)) != FR_OK) {
+			xil_printf("File could not be closed.\n");
+			xil_printf("Code d'erreur : %d", err);
+		}
+		xil_printf("Code d'erreur : %d", err);
+		return NULL;
+	}
+
+	xil_printf("Video file has been read successfully.\n");
+
+	if (bytesRead != fInfo->fsize) {
+		xil_printf("File might not have been fully read.\n");
+	}
+
+	if ((err = f_close(&fp)) != FR_OK) {
+		xil_printf("File could not be closed.\n");
+		xil_printf("Code d'erreur : %d", err);
+	}
+
+	if ((err = f_mount(0, "", 0)) != FR_OK) {
+		xil_printf("Filesystem could not be unmounted.\n");
+		xil_printf("Code d'erreur : %d", err);
+	}
+
+	free(fs);
+	xil_printf("File closed and filesystem unmounted successfully.\n");
+	return contents;
 }
 
 
@@ -110,7 +166,7 @@ int main()
 	hdmiInit(&hdmiConfig);
 
 	FILINFO fInfo = { 0 };
-	uint8_t * data = getFileContents("a9.rgb", &fInfo);
+	uint8_t * data = getFileContents("a9s.rgb", &fInfo);
 	Xil_DCacheFlush();		// On flush la cache pour s'assurer que tout le fichier retourner est dans la DDR et non seulement dans la cache.
 
 	// À compléter: Initialisation du filtre de Sobel matériel
@@ -123,6 +179,8 @@ int main()
 			//doSobel( /* paramètres à compléter ici */);
 		}
 	}
+
+	free(data);
 
 	cleanup_platform();
 	return 0;
