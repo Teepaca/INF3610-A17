@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Fri Nov 10 15:44:04 2017
+<item name = "Date">Mon Nov 20 19:59:36 2017
 </item>
 <item name = "Version">2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)</item>
 <item name = "Project">SobelLab4</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 6.51, 1.25</column>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,18 +24,23 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">2073603, 2073603, 2073604, 2073604, none</column>
+<column name="">18664561, 491445361, 18664562, 491445362, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_getVal_fu_276">getVal, 9, 9, 9, 9, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- IMG">2073601, 2073601, 3, 1, 1, 2073600, yes</column>
+<column name="- Loop 1">18664560, 491445360, 17282 ~ 455042, -, -, 1080, no</column>
+<column name=" + Loop 1.1">17280, 455040, 9 ~ 237, -, -, 1920, no</column>
+<column name="  ++ Loop 1.1.1">222, 222, 74, -, -, 3, no</column>
+<column name="   +++ Loop 1.1.1.1">72, 72, 24, -, -, 3, no</column>
+<column name="  ++ Loop 1.1.2">4, 4, 1, -, -, 4, no</column>
 </table>
 </item>
 </section>

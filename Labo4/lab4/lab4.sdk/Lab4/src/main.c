@@ -8,7 +8,7 @@
 #include <ff.h>
 #include "platform.h"
 #include "hdmi/zed_hdmi_display.h"
-//#include "Sobel.h"			//décommentez lorsqu'il existera
+#include "Sobel.h"			//décommentez lorsqu'il existera
 
 void hdmiInit(zed_hdmi_display_t * hdmiConfig)
 {
@@ -64,7 +64,7 @@ void doSobelSW(uint8_t * img_in, unsigned * img_out)
 	XTime_GetTime(&before);
 
 	// Décommentez une fois votre code importé
-	//sobel_filter(img_in, img_out);
+	sobel_filter(img_in, img_out);
 
 	XTime_GetTime(&after);
 
@@ -175,7 +175,8 @@ int main()
 
 	while(1) {
 		for (int i = 0; i < fInfo.fsize; i += 1920*1080) {
-			show_video(&hdmiConfig, &data[i], 1920*1080);
+			//show_video(&hdmiConfig, &data[i], 1920*1080);
+			doSobelSW(data+i, (unsigned *)(&hdmiConfig)->uBaseAddr_MEM_HdmiDisplay);
 			//doSobel( /* paramètres à compléter ici */);
 		}
 	}

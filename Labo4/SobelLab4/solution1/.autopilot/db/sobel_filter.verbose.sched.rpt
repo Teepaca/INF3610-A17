@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'sobel_filter'
 ================================================================
-* Date:           Fri Nov 10 15:44:04 2017
+* Date:           Mon Nov 20 19:59:36 2017
 
 * Version:        2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)
 * Project:        SobelLab4
@@ -20,29 +20,33 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|      6.51|        1.25|
+    |ap_clk  |  10.00|      8.75|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
     * Summary: 
-    +---------+---------+---------+---------+---------+
-    |      Latency      |      Interval     | Pipeline|
-    |   min   |   max   |   min   |   max   |   Type  |
-    +---------+---------+---------+---------+---------+
-    |  2073603|  2073603|  2073604|  2073604|   none  |
-    +---------+---------+---------+---------+---------+
+    +----------+-----------+----------+-----------+---------+
+    |        Latency       |       Interval       | Pipeline|
+    |    min   |    max    |    min   |    max    |   Type  |
+    +----------+-----------+----------+-----------+---------+
+    |  18664561|  491445361|  18664562|  491445362|   none  |
+    +----------+-----------+----------+-----------+---------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        +----------+---------+---------+----------+-----------+-----------+---------+----------+
-        |          |      Latency      | Iteration|  Initiation Interval  |   Trip  |          |
-        | Loop Name|   min   |   max   |  Latency |  achieved |   target  |  Count  | Pipelined|
-        +----------+---------+---------+----------+-----------+-----------+---------+----------+
-        |- IMG     |  2073601|  2073601|         3|          1|          1|  2073600|    yes   |
-        +----------+---------+---------+----------+-----------+-----------+---------+----------+
+        +---------------------+----------+-----------+----------------+-----------+-----------+------+----------+
+        |                     |        Latency       |    Iteration   |  Initiation Interval  | Trip |          |
+        |      Loop Name      |    min   |    max    |     Latency    |  achieved |   target  | Count| Pipelined|
+        +---------------------+----------+-----------+----------------+-----------+-----------+------+----------+
+        |- Loop 1             |  18664560|  491445360| 17282 ~ 455042 |          -|          -|  1080|    no    |
+        | + Loop 1.1          |     17280|     455040|     9 ~ 237    |          -|          -|  1920|    no    |
+        |  ++ Loop 1.1.1      |       222|        222|              74|          -|          -|     3|    no    |
+        |   +++ Loop 1.1.1.1  |        72|         72|              24|          -|          -|     3|    no    |
+        |  ++ Loop 1.1.2      |         4|          4|               1|          -|          -|     4|    no    |
+        +---------------------+----------+-----------+----------------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -66,108 +70,607 @@ IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
-+ Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 3
-
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 5
-* Pipeline: 1
-  Pipeline-0: II = 1, D = 3, States = { 2 3 4 }
+* Number of FSM states: 26
+* Pipeline: 0
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 
 	2  / true
 2 --> 
-	5  / (exitcond1)
-	3  / (!exitcond1)
+	3  / (!tmp_1)
 3 --> 
-	4  / true
+	20  / (!tmp_5 & tmp_17) | (!tmp_5 & tmp_27)
+	4  / (!tmp_5 & !tmp_17 & !tmp_27)
+	2  / (tmp_5)
 4 --> 
-	2  / true
+	11  / (exitcond1_i)
+	5  / (!exitcond1_i)
 5 --> 
+	6  / (!exitcond_i)
+	4  / (exitcond_i)
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	5  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / (exitcond)
+	12  / (!exitcond)
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	3  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	19  / true
 * FSM state operations: 
 
  <State 1>: 1.59ns
-ST_1: StgValue_6 (3)  [1/1] 0.00ns
-:0  call void (...)* @_ssdm_op_SpecBitsMap([2073600 x i8]* %inter_pix) nounwind, !map !12
+ST_1: four (7)  [1/1] 0.00ns
+:0  %four = alloca i32
 
-ST_1: StgValue_7 (4)  [1/1] 0.00ns
-:1  call void (...)* @_ssdm_op_SpecBitsMap([2073600 x i32]* %out_pix) nounwind, !map !18
+ST_1: out_pix_read (8)  [1/1] 1.00ns
+:1  %out_pix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %out_pix)
 
-ST_1: StgValue_8 (5)  [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @sobel_filter_str) nounwind
+ST_1: inter_pix_read (9)  [1/1] 1.00ns
+:2  %inter_pix_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %inter_pix)
 
-ST_1: StgValue_9 (6)  [1/1] 1.59ns  loc: SobelLab4/Sobel.cpp:45
-:3  br label %1
+ST_1: out_pix3 (10)  [1/1] 0.00ns
+:3  %out_pix3 = call i30 @_ssdm_op_PartSelect.i30.i32.i32.i32(i32 %out_pix_read, i32 2, i32 31)
 
+ST_1: tmp_6 (11)  [1/1] 0.00ns
+:4  %tmp_6 = zext i30 %out_pix3 to i32
 
- <State 2>: 3.25ns
-ST_2: i (8)  [1/1] 0.00ns
-:0  %i = phi i21 [ 0, %0 ], [ %i_1, %2 ]
+ST_1: StgValue_32 (12)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap(i32* %gmem2), !map !22
 
-ST_2: exitcond1 (9)  [1/1] 3.15ns  loc: SobelLab4/Sobel.cpp:45
-:1  %exitcond1 = icmp eq i21 %i, -23552
+ST_1: StgValue_33 (13)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(i8* %gmem), !map !28
 
-ST_2: i_1 (10)  [1/1] 2.59ns  loc: SobelLab4/Sobel.cpp:45
-:2  %i_1 = add i21 %i, 1
+ST_1: StgValue_34 (14)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @sobel_filter_str) nounwind
 
-ST_2: StgValue_13 (11)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:45
-:3  br i1 %exitcond1, label %3, label %2
+ST_1: StgValue_35 (15)  [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecInterface(i8* %gmem, [6 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [6 x i8]* @p_str2, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
-ST_2: i_cast (13)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:45
-:0  %i_cast = zext i21 %i to i32
+ST_1: StgValue_36 (16)  [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecInterface(i32 %inter_pix, [10 x i8]* @mode, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @bundle, [6 x i8]* @p_str2, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
-ST_2: inter_pix_addr (18)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:47
-:5  %inter_pix_addr = getelementptr [2073600 x i8]* %inter_pix, i32 0, i32 %i_cast
+ST_1: StgValue_37 (17)  [1/1] 0.00ns
+:10  call void (...)* @_ssdm_op_SpecInterface(i32* %gmem2, [6 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [6 x i8]* @p_str2, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
-ST_2: val (19)  [2/2] 3.25ns  loc: SobelLab4/Sobel.cpp:47
-:6  %val = load i8* %inter_pix_addr, align 1
+ST_1: StgValue_38 (18)  [1/1] 0.00ns
+:11  call void (...)* @_ssdm_op_SpecInterface(i32 %out_pix, [10 x i8]* @mode5, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @bundle6, [6 x i8]* @p_str2, [1 x i8]* @p_str, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
+ST_1: StgValue_39 (19)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:81
+:12  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str3, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
 
- <State 3>: 6.51ns
-ST_3: val (19)  [1/2] 3.25ns  loc: SobelLab4/Sobel.cpp:47
-:6  %val = load i8* %inter_pix_addr, align 1
-
-ST_3: fourWide (20)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:50
-:7  %fourWide = call i32 @_ssdm_op_BitConcatenate.i32.i8.i8.i8.i8(i8 %val, i8 %val, i8 %val, i8 %val)
-
-ST_3: out_pix_addr (21)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:51
-:8  %out_pix_addr = getelementptr [2073600 x i32]* %out_pix, i32 0, i32 %i_cast
-
-ST_3: StgValue_20 (22)  [2/2] 3.25ns  loc: SobelLab4/Sobel.cpp:51
-:9  store i32 %fourWide, i32* %out_pix_addr, align 4
+ST_1: StgValue_40 (20)  [1/1] 1.59ns  loc: SobelLab4/Sobel.cpp:83
+:13  br label %.loopexit
 
 
- <State 4>: 3.25ns
-ST_4: empty (14)  [1/1] 0.00ns
-:1  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2073600, i64 2073600, i64 2073600) nounwind
+ <State 2>: 2.94ns
+ST_2: i (22)  [1/1] 0.00ns
+.loopexit:0  %i = phi i11 [ 0, %0 ], [ %i_1, %.loopexit.loopexit ]
 
-ST_4: StgValue_22 (15)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:45
-:2  call void (...)* @_ssdm_op_SpecLoopName([4 x i8]* @p_str1) nounwind
+ST_2: tmp_1 (23)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:83
+.loopexit:1  %tmp_1 = icmp eq i11 %i, -968
 
-ST_4: tmp_1 (16)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:45
-:3  %tmp_1 = call i32 (...)* @_ssdm_op_SpecRegionBegin([4 x i8]* @p_str1) nounwind
+ST_2: empty (24)  [1/1] 0.00ns
+.loopexit:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1080, i64 1080, i64 1080) nounwind
 
-ST_4: StgValue_24 (17)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:46
-:4  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
+ST_2: i_1 (25)  [1/1] 2.33ns  loc: SobelLab4/Sobel.cpp:83
+.loopexit:3  %i_1 = add i11 %i, 1
 
-ST_4: StgValue_25 (22)  [1/2] 3.25ns  loc: SobelLab4/Sobel.cpp:51
-:9  store i32 %fourWide, i32* %out_pix_addr, align 4
+ST_2: StgValue_45 (26)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:83
+.loopexit:4  br i1 %tmp_1, label %7, label %.preheader.preheader
 
-ST_4: empty_2 (23)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52
-:10  %empty_2 = call i32 (...)* @_ssdm_op_SpecRegionEnd([4 x i8]* @p_str1, i32 %tmp_1) nounwind
+ST_2: p_shl (28)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:86
+.preheader.preheader:0  %p_shl = call i22 @_ssdm_op_BitConcatenate.i22.i11.i11(i11 %i, i11 0)
 
-ST_4: StgValue_27 (24)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:45
-:11  br label %1
+ST_2: p_shl_cast (29)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:86
+.preheader.preheader:1  %p_shl_cast = zext i22 %p_shl to i23
 
+ST_2: p_shl5 (30)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:86
+.preheader.preheader:2  %p_shl5 = call i18 @_ssdm_op_BitConcatenate.i18.i11.i7(i11 %i, i7 0)
 
- <State 5>: 0.00ns
-ST_5: StgValue_28 (26)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:53
+ST_2: p_shl5_cast (31)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:86
+.preheader.preheader:3  %p_shl5_cast = zext i18 %p_shl5 to i23
+
+ST_2: tmp_4 (32)  [1/1] 2.59ns  loc: SobelLab4/Sobel.cpp:86
+.preheader.preheader:4  %tmp_4 = sub i23 %p_shl_cast, %p_shl5_cast
+
+ST_2: StgValue_51 (33)  [1/1] 1.59ns  loc: SobelLab4/Sobel.cpp:84
+.preheader.preheader:5  br label %.preheader
+
+ST_2: StgValue_52 (174)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:110
 :0  ret void
+
+
+ <State 3>: 5.41ns
+ST_3: j (35)  [1/1] 0.00ns
+.preheader:0  %j = phi i11 [ 0, %.preheader.preheader ], [ %j_3, %.preheader.backedge ]
+
+ST_3: j_cast6 (36)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:84
+.preheader:1  %j_cast6 = zext i11 %j to i23
+
+ST_3: tmp_5 (37)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:84
+.preheader:2  %tmp_5 = icmp eq i11 %j, -128
+
+ST_3: empty_5 (38)  [1/1] 0.00ns
+.preheader:3  %empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1920, i64 1920, i64 1920) nounwind
+
+ST_3: j_3 (39)  [1/1] 2.33ns  loc: SobelLab4/Sobel.cpp:84
+.preheader:4  %j_3 = add i11 %j, 1
+
+ST_3: StgValue_58 (40)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:84
+.preheader:5  br i1 %tmp_5, label %.loopexit.loopexit, label %1
+
+ST_3: fullIndex_assign (42)  [1/1] 2.59ns  loc: SobelLab4/Sobel.cpp:84
+:0  %fullIndex_assign = add i23 %j_cast6, %tmp_4
+
+ST_3: fullIndex_assign_cas (43)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:84
+:1  %fullIndex_assign_cas = sext i23 %fullIndex_assign to i32
+
+ST_3: tmp (44)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:83
+:2  %tmp = icmp eq i11 %i, -969
+
+ST_3: tmp_7 (45)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:83
+:3  %tmp_7 = icmp eq i11 %i, 0
+
+ST_3: tmp_17 (46)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:83
+:4  %tmp_17 = or i1 %tmp_7, %tmp
+
+ST_3: StgValue_64 (47)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:83
+:5  br i1 %tmp_17, label %2, label %switch.early.test
+
+ST_3: tmp_25 (49)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:84
+switch.early.test:0  %tmp_25 = icmp eq i11 %j, -129
+
+ST_3: tmp_26 (50)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:84
+switch.early.test:1  %tmp_26 = icmp eq i11 %j, 0
+
+ST_3: tmp_27 (51)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:84
+switch.early.test:2  %tmp_27 = or i1 %tmp_26, %tmp_25
+
+ST_3: StgValue_68 (52)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:84
+switch.early.test:3  br i1 %tmp_27, label %2, label %.preheader6.preheader
+
+ST_3: StgValue_69 (54)  [1/1] 1.59ns
+.preheader6.preheader:0  br label %.preheader6
+
+ST_3: out_pix4_sum (163)  [1/1] 2.82ns  loc: SobelLab4/Sobel.cpp:84
+:0  %out_pix4_sum = add i32 %tmp_6, %fullIndex_assign_cas
+
+ST_3: StgValue_71 (172)  [1/1] 0.00ns
+.loopexit.loopexit:0  br label %.loopexit
+
+
+ <State 4>: 5.58ns
+ST_4: y_weight_0_i (56)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader6:0  %y_weight_0_i = phi i32 [ %y_weight_1_i, %.preheader6.loopexit ], [ 0, %.preheader6.preheader ]
+
+ST_4: x_weight_0_i (57)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+.preheader6:1  %x_weight_0_i = phi i32 [ %x_weight_1_i, %.preheader6.loopexit ], [ 0, %.preheader6.preheader ]
+
+ST_4: i_0_i (58)  [1/1] 0.00ns
+.preheader6:2  %i_0_i = phi i2 [ %i_2, %.preheader6.loopexit ], [ 0, %.preheader6.preheader ]
+
+ST_4: i_0_i_cast5_cast (59)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:46->SobelLab4/Sobel.cpp:89
+.preheader6:3  %i_0_i_cast5_cast = zext i2 %i_0_i to i5
+
+ST_4: tmp_19 (60)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:46->SobelLab4/Sobel.cpp:89
+.preheader6:4  %tmp_19 = call i4 @_ssdm_op_BitConcatenate.i4.i2.i2(i2 %i_0_i, i2 0)
+
+ST_4: p_shl6_cast (61)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader6:5  %p_shl6_cast = zext i4 %tmp_19 to i5
+
+ST_4: tmp_21 (62)  [1/1] 2.35ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader6:6  %tmp_21 = sub i5 %p_shl6_cast, %i_0_i_cast5_cast
+
+ST_4: exitcond1_i (63)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:46->SobelLab4/Sobel.cpp:89
+.preheader6:7  %exitcond1_i = icmp eq i2 %i_0_i, -1
+
+ST_4: empty_6 (64)  [1/1] 0.00ns
+.preheader6:8  %empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind
+
+ST_4: i_2 (65)  [1/1] 2.17ns  loc: SobelLab4/Sobel.cpp:46->SobelLab4/Sobel.cpp:89
+.preheader6:9  %i_2 = add i2 %i_0_i, 1
+
+ST_4: StgValue_82 (66)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:46->SobelLab4/Sobel.cpp:89
+.preheader6:10  br i1 %exitcond1_i, label %_ifconv, label %.preheader.preheader.i
+
+ST_4: tmp_15 (68)  [1/1] 2.17ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+.preheader.preheader.i:0  %tmp_15 = add i2 %i_0_i, -1
+
+ST_4: StgValue_84 (69)  [1/1] 1.59ns  loc: SobelLab4/Sobel.cpp:47->SobelLab4/Sobel.cpp:89
+.preheader.preheader.i:1  br label %.preheader.i
+
+ST_4: tmp_s (103)  [1/1] 3.26ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89
+_ifconv:0  %tmp_s = icmp sgt i32 %x_weight_0_i, 0
+
+ST_4: tmp_28 (104)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89
+_ifconv:1  %tmp_28 = trunc i32 %x_weight_0_i to i8
+
+ST_4: tmp_9 (105)  [1/1] 2.32ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89
+_ifconv:2  %tmp_9 = sub i8 0, %tmp_28
+
+ST_4: tmp_2 (106)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89 (grouped into LUT with out node tmp_11)
+_ifconv:3  %tmp_2 = select i1 %tmp_s, i8 %tmp_28, i8 %tmp_9
+
+ST_4: tmp_3 (107)  [1/1] 3.26ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89
+_ifconv:4  %tmp_3 = icmp sgt i32 %y_weight_0_i, 0
+
+ST_4: tmp_29 (108)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89
+_ifconv:5  %tmp_29 = trunc i32 %y_weight_0_i to i8
+
+ST_4: tmp_8 (109)  [1/1] 2.32ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89
+_ifconv:6  %tmp_8 = sub i8 0, %tmp_29
+
+ST_4: tmp_10 (110)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89 (grouped into LUT with out node tmp_11)
+_ifconv:7  %tmp_10 = select i1 %tmp_3, i8 %tmp_29, i8 %tmp_8
+
+ST_4: tmp_11 (111)  [1/1] 2.32ns  loc: SobelLab4/Sobel.cpp:58->SobelLab4/Sobel.cpp:89 (out node of the LUT)
+_ifconv:8  %tmp_11 = add i8 %tmp_2, %tmp_10
+
+
+ <State 5>: 5.59ns
+ST_5: y_weight_1_i (71)  [1/1] 0.00ns
+.preheader.i:0  %y_weight_1_i = phi i32 [ %y_weight, %3 ], [ %y_weight_0_i, %.preheader.preheader.i ]
+
+ST_5: x_weight_1_i (72)  [1/1] 0.00ns
+.preheader.i:1  %x_weight_1_i = phi i32 [ %x_weight, %3 ], [ %x_weight_0_i, %.preheader.preheader.i ]
+
+ST_5: j_0_i (73)  [1/1] 0.00ns
+.preheader.i:2  %j_0_i = phi i2 [ %j_1, %3 ], [ 0, %.preheader.preheader.i ]
+
+ST_5: j_0_i_cast4_cast (74)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader.i:3  %j_0_i_cast4_cast = zext i2 %j_0_i to i5
+
+ST_5: tmp_22 (75)  [1/1] 2.33ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader.i:4  %tmp_22 = add i5 %tmp_21, %j_0_i_cast4_cast
+
+ST_5: tmp_22_cast1 (76)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader.i:5  %tmp_22_cast1 = sext i5 %tmp_22 to i32
+
+ST_5: y_op_addr (77)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+.preheader.i:6  %y_op_addr = getelementptr [9 x i3]* @y_op, i32 0, i32 %tmp_22_cast1
+
+ST_5: x_op_addr (78)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+.preheader.i:7  %x_op_addr = getelementptr [9 x i3]* @x_op, i32 0, i32 %tmp_22_cast1
+
+ST_5: exitcond_i (79)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:47->SobelLab4/Sobel.cpp:89
+.preheader.i:8  %exitcond_i = icmp eq i2 %j_0_i, -1
+
+ST_5: empty_7 (80)  [1/1] 0.00ns
+.preheader.i:9  %empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 3, i64 3, i64 3) nounwind
+
+ST_5: j_1 (81)  [1/1] 2.17ns  loc: SobelLab4/Sobel.cpp:47->SobelLab4/Sobel.cpp:89
+.preheader.i:10  %j_1 = add i2 %j_0_i, 1
+
+ST_5: StgValue_105 (82)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:47->SobelLab4/Sobel.cpp:89
+.preheader.i:11  br i1 %exitcond_i, label %.preheader6.loopexit, label %3
+
+ST_5: tmp_16 (84)  [1/1] 2.17ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:0  %tmp_16 = add i2 %j_0_i, -1
+
+ST_5: x_op_load (87)  [2/2] 3.25ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:3  %x_op_load = load i3* %x_op_addr, align 1
+
+ST_5: y_op_load (94)  [2/2] 3.25ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:10  %y_op_load = load i3* %y_op_addr, align 1
+
+ST_5: StgValue_109 (101)  [1/1] 0.00ns
+.preheader6.loopexit:0  br label %.preheader6
+
+
+ <State 6>: 7.08ns
+ST_6: tmp_23 (85)  [2/2] 7.08ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:1  %tmp_23 = call fastcc zeroext i8 @getVal(i23 %fullIndex_assign, i2 %tmp_15, i2 %tmp_16, i8* %gmem, i32 %inter_pix_read)
+
+ST_6: x_op_load (87)  [1/2] 3.25ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:3  %x_op_load = load i3* %x_op_addr, align 1
+
+ST_6: y_op_load (94)  [1/2] 3.25ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:10  %y_op_load = load i3* %y_op_addr, align 1
+
+
+ <State 7>: 8.75ns
+ST_7: tmp_23 (85)  [1/2] 8.75ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:1  %tmp_23 = call fastcc zeroext i8 @getVal(i23 %fullIndex_assign, i2 %tmp_15, i2 %tmp_16, i8* %gmem, i32 %inter_pix_read)
+
+
+ <State 8>: 7.08ns
+ST_8: tmp_20_cast_cast (86)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:2  %tmp_20_cast_cast = zext i8 %tmp_23 to i12
+
+ST_8: tmp_21_cast_cast (88)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:4  %tmp_21_cast_cast = sext i3 %x_op_load to i12
+
+ST_8: tmp_18 (89)  [1/1] 3.36ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:5  %tmp_18 = mul i12 %tmp_20_cast_cast, %tmp_21_cast_cast
+
+ST_8: tmp_22_cast (90)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:6  %tmp_22_cast = sext i12 %tmp_18 to i32
+
+ST_8: x_weight (91)  [1/1] 3.02ns  loc: SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89
+:7  %x_weight = add nsw i32 %x_weight_1_i, %tmp_22_cast
+
+ST_8: tmp_24 (92)  [2/2] 7.08ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:8  %tmp_24 = call fastcc zeroext i8 @getVal(i23 %fullIndex_assign, i2 %tmp_15, i2 %tmp_16, i8* %gmem, i32 %inter_pix_read)
+
+
+ <State 9>: 8.75ns
+ST_9: tmp_24 (92)  [1/2] 8.75ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:8  %tmp_24 = call fastcc zeroext i8 @getVal(i23 %fullIndex_assign, i2 %tmp_15, i2 %tmp_16, i8* %gmem, i32 %inter_pix_read)
+
+
+ <State 10>: 6.38ns
+ST_10: tmp_24_cast_cast (93)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:9  %tmp_24_cast_cast = zext i8 %tmp_24 to i12
+
+ST_10: tmp_25_cast_cast (95)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:11  %tmp_25_cast_cast = sext i3 %y_op_load to i12
+
+ST_10: tmp_20 (96)  [1/1] 3.36ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:12  %tmp_20 = mul i12 %tmp_24_cast_cast, %tmp_25_cast_cast
+
+ST_10: tmp_26_cast (97)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:13  %tmp_26_cast = sext i12 %tmp_20 to i32
+
+ST_10: y_weight (98)  [1/1] 3.02ns  loc: SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89
+:14  %y_weight = add nsw i32 %y_weight_1_i, %tmp_26_cast
+
+ST_10: StgValue_126 (99)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:47->SobelLab4/Sobel.cpp:89
+:15  br label %.preheader.i
+
+
+ <State 11>: 4.98ns
+ST_11: edge_val (112)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:58->SobelLab4/Sobel.cpp:89 (grouped into LUT with out node val)
+_ifconv:9  %edge_val = xor i8 %tmp_11, -1
+
+ST_11: tmp_12 (113)  [1/1] 2.91ns  loc: SobelLab4/Sobel.cpp:61->SobelLab4/Sobel.cpp:89
+_ifconv:10  %tmp_12 = icmp ult i8 %tmp_11, 55
+
+ST_11: tmp_13 (114)  [1/1] 2.91ns  loc: SobelLab4/Sobel.cpp:63->SobelLab4/Sobel.cpp:89
+_ifconv:11  %tmp_13 = icmp ugt i8 %tmp_11, -101
+
+ST_11: p_i (115)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:89 (grouped into LUT with out node val)
+_ifconv:12  %p_i = select i1 %tmp_12, i8 -1, i8 0
+
+ST_11: tmp_14 (116)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:89 (grouped into LUT with out node val)
+_ifconv:13  %tmp_14 = or i1 %tmp_12, %tmp_13
+
+ST_11: val (117)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:89 (out node of the LUT)
+_ifconv:14  %val = select i1 %tmp_14, i8 %p_i, i8 %edge_val
+
+ST_11: StgValue_133 (118)  [1/1] 1.59ns  loc: SobelLab4/Sobel.cpp:91
+_ifconv:15  br label %4
+
+
+ <State 12>: 8.52ns
+ST_12: j1 (120)  [1/1] 0.00ns
+:0  %j1 = phi i3 [ 0, %_ifconv ], [ %j_2, %5 ]
+
+ST_12: exitcond (121)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:91
+:1  %exitcond = icmp eq i3 %j1, -4
+
+ST_12: empty_8 (122)  [1/1] 0.00ns
+:2  %empty_8 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4) nounwind
+
+ST_12: j_2 (123)  [1/1] 2.26ns  loc: SobelLab4/Sobel.cpp:91
+:3  %j_2 = add i3 %j1, 1
+
+ST_12: StgValue_138 (124)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:4  br i1 %exitcond, label %6, label %5
+
+ST_12: four_load_1 (126)  [1/1] 0.00ns
+:0  %four_load_1 = load i32* %four
+
+ST_12: tmp_30 (127)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:1  %tmp_30 = trunc i3 %j1 to i2
+
+ST_12: start_pos (128)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:2  %start_pos = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %tmp_30, i3 0)
+
+ST_12: end_pos (129)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:3  %end_pos = or i5 %start_pos, 7
+
+ST_12: tmp_31 (130)  [1/1] 3.31ns  loc: SobelLab4/Sobel.cpp:91
+:4  %tmp_31 = icmp ugt i5 %start_pos, %end_pos
+
+ST_12: tmp_32 (131)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:5  %tmp_32 = zext i5 %start_pos to i6
+
+ST_12: tmp_33 (132)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:6  %tmp_33 = zext i5 %end_pos to i6
+
+ST_12: tmp_34 (133)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:89 (grouped into LUT with out node tmp_43)
+:7  %tmp_34 = zext i8 %val to i32
+
+ST_12: tmp_35 (134)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node tmp_43)
+:8  %tmp_35 = xor i6 %tmp_32, 31
+
+ST_12: tmp_36 (135)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:9  %tmp_36 = select i1 %tmp_31, i6 %tmp_32, i6 %tmp_33
+
+ST_12: tmp_37 (136)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:10  %tmp_37 = select i1 %tmp_31, i6 %tmp_33, i6 %tmp_32
+
+ST_12: tmp_38 (137)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node tmp_43)
+:11  %tmp_38 = select i1 %tmp_31, i6 %tmp_35, i6 %tmp_32
+
+ST_12: tmp_39 (138)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:12  %tmp_39 = xor i6 %tmp_36, 31
+
+ST_12: tmp_40 (139)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node tmp_43)
+:13  %tmp_40 = zext i6 %tmp_38 to i32
+
+ST_12: tmp_41 (140)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:14  %tmp_41 = zext i6 %tmp_37 to i32
+
+ST_12: tmp_42 (141)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:15  %tmp_42 = zext i6 %tmp_39 to i32
+
+ST_12: tmp_43 (142)  [1/1] 3.15ns  loc: SobelLab4/Sobel.cpp:89 (out node of the LUT)
+:16  %tmp_43 = shl i32 %tmp_34, %tmp_40
+
+ST_12: tmp_44 (143)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:89 (grouped into LUT with out node four_1)
+:17  %tmp_44 = call i32 @llvm.part.select.i32(i32 %tmp_43, i32 31, i32 0)
+
+ST_12: tmp_45 (144)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node four_1)
+:18  %tmp_45 = select i1 %tmp_31, i32 %tmp_44, i32 %tmp_43
+
+ST_12: tmp_46 (145)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:19  %tmp_46 = shl i32 -1, %tmp_41
+
+ST_12: tmp_47 (146)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node p_demorgan)
+:20  %tmp_47 = lshr i32 -1, %tmp_42
+
+ST_12: p_demorgan (147)  [1/1] 2.94ns  loc: SobelLab4/Sobel.cpp:91 (out node of the LUT)
+:21  %p_demorgan = and i32 %tmp_46, %tmp_47
+
+ST_12: tmp_48 (148)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node four_1)
+:22  %tmp_48 = xor i32 %p_demorgan, -1
+
+ST_12: tmp_49 (149)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node four_1)
+:23  %tmp_49 = and i32 %four_load_1, %tmp_48
+
+ST_12: tmp_50 (150)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91 (grouped into LUT with out node four_1)
+:24  %tmp_50 = and i32 %tmp_45, %p_demorgan
+
+ST_12: four_1 (151)  [1/1] 2.07ns  loc: SobelLab4/Sobel.cpp:91 (out node of the LUT)
+:25  %four_1 = or i32 %tmp_49, %tmp_50
+
+ST_12: StgValue_165 (152)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:90
+:26  store i32 %four_1, i32* %four
+
+ST_12: StgValue_166 (153)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:91
+:27  br label %4
+
+ST_12: out_pix4_sum7 (156)  [1/1] 2.82ns  loc: SobelLab4/Sobel.cpp:84
+:1  %out_pix4_sum7 = add i32 %tmp_6, %fullIndex_assign_cas
+
+
+ <State 13>: 8.75ns
+ST_13: gmem2_addr_1 (157)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:84
+:2  %gmem2_addr_1 = getelementptr i32* %gmem2, i32 %out_pix4_sum7
+
+ST_13: gmem2_addr_1_req (158)  [1/1] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:3  %gmem2_addr_1_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %gmem2_addr_1, i32 1)
+
+
+ <State 14>: 8.75ns
+ST_14: four_load (155)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:94
+:0  %four_load = load i32* %four
+
+ST_14: StgValue_171 (159)  [1/1] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:4  call void @_ssdm_op_Write.m_axi.i32P(i32* %gmem2_addr_1, i32 %four_load, i4 -1)
+
+
+ <State 15>: 8.75ns
+ST_15: gmem2_addr_1_resp (160)  [5/5] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:5  %gmem2_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr_1)
+
+
+ <State 16>: 8.75ns
+ST_16: gmem2_addr_1_resp (160)  [4/5] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:5  %gmem2_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr_1)
+
+
+ <State 17>: 8.75ns
+ST_17: gmem2_addr_1_resp (160)  [3/5] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:5  %gmem2_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr_1)
+
+
+ <State 18>: 8.75ns
+ST_18: gmem2_addr_1_resp (160)  [2/5] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:5  %gmem2_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr_1)
+
+
+ <State 19>: 8.75ns
+ST_19: gmem2_addr_1_resp (160)  [1/5] 8.75ns  loc: SobelLab4/Sobel.cpp:94
+:5  %gmem2_addr_1_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr_1)
+
+ST_19: StgValue_177 (161)  [1/1] 0.00ns
+:6  br label %.preheader.backedge
+
+ST_19: StgValue_178 (170)  [1/1] 0.00ns
+.preheader.backedge:0  br label %.preheader
+
+
+ <State 20>: 8.75ns
+ST_20: gmem2_addr (164)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:84
+:1  %gmem2_addr = getelementptr i32* %gmem2, i32 %out_pix4_sum
+
+ST_20: gmem2_addr_req (165)  [1/1] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:2  %gmem2_addr_req = call i1 @_ssdm_op_WriteReq.m_axi.i32P(i32* %gmem2_addr, i32 1)
+
+
+ <State 21>: 8.75ns
+ST_21: StgValue_181 (166)  [1/1] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:3  call void @_ssdm_op_Write.m_axi.i32P(i32* %gmem2_addr, i32 0, i4 -1)
+
+
+ <State 22>: 8.75ns
+ST_22: gmem2_addr_resp (167)  [5/5] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:4  %gmem2_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr)
+
+
+ <State 23>: 8.75ns
+ST_23: gmem2_addr_resp (167)  [4/5] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:4  %gmem2_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr)
+
+
+ <State 24>: 8.75ns
+ST_24: gmem2_addr_resp (167)  [3/5] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:4  %gmem2_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr)
+
+
+ <State 25>: 8.75ns
+ST_25: gmem2_addr_resp (167)  [2/5] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:4  %gmem2_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr)
+
+
+ <State 26>: 8.75ns
+ST_26: gmem2_addr_resp (167)  [1/5] 8.75ns  loc: SobelLab4/Sobel.cpp:86
+:4  %gmem2_addr_resp = call i1 @_ssdm_op_WriteResp.m_axi.i32P(i32* %gmem2_addr)
+
+ST_26: StgValue_187 (168)  [1/1] 0.00ns  loc: SobelLab4/Sobel.cpp:87
+:5  br label %.preheader.backedge
 
 
 
@@ -178,25 +681,129 @@ Target clock period: 10ns, clock uncertainty: 1.25ns.
 
  <State 1>: 1.59ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('i') with incoming values : ('i', SobelLab4/Sobel.cpp:45) [8]  (1.59 ns)
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', SobelLab4/Sobel.cpp:83) [22]  (1.59 ns)
 
- <State 2>: 3.25ns
+ <State 2>: 2.94ns
 The critical path consists of the following:
-	'phi' operation ('i') with incoming values : ('i', SobelLab4/Sobel.cpp:45) [8]  (0 ns)
-	'getelementptr' operation ('inter_pix_addr', SobelLab4/Sobel.cpp:47) [18]  (0 ns)
-	'load' operation ('val', SobelLab4/Sobel.cpp:47) on array 'inter_pix' [19]  (3.25 ns)
+	'phi' operation ('i') with incoming values : ('i', SobelLab4/Sobel.cpp:83) [22]  (0 ns)
+	'icmp' operation ('tmp_1', SobelLab4/Sobel.cpp:83) [23]  (2.94 ns)
 
- <State 3>: 6.51ns
+ <State 3>: 5.41ns
 The critical path consists of the following:
-	'load' operation ('val', SobelLab4/Sobel.cpp:47) on array 'inter_pix' [19]  (3.25 ns)
-	'store' operation (SobelLab4/Sobel.cpp:51) of variable 'fourWide', SobelLab4/Sobel.cpp:50 on array 'out_pix' [22]  (3.25 ns)
+	'phi' operation ('j') with incoming values : ('j', SobelLab4/Sobel.cpp:84) [35]  (0 ns)
+	'add' operation ('fullIndex', SobelLab4/Sobel.cpp:84) [42]  (2.59 ns)
+	'add' operation ('out_pix4_sum', SobelLab4/Sobel.cpp:84) [163]  (2.82 ns)
 
- <State 4>: 3.25ns
+ <State 4>: 5.58ns
 The critical path consists of the following:
-	'store' operation (SobelLab4/Sobel.cpp:51) of variable 'fourWide', SobelLab4/Sobel.cpp:50 on array 'out_pix' [22]  (3.25 ns)
+	'phi' operation ('y_weight_0_i', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) with incoming values : ('y_weight', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) [56]  (0 ns)
+	'icmp' operation ('tmp_3', SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89) [107]  (3.26 ns)
+	'select' operation ('tmp_10', SobelLab4/Sobel.cpp:56->SobelLab4/Sobel.cpp:89) [110]  (0 ns)
+	'add' operation ('tmp_11', SobelLab4/Sobel.cpp:58->SobelLab4/Sobel.cpp:89) [111]  (2.32 ns)
 
- <State 5>: 0ns
+ <State 5>: 5.59ns
 The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SobelLab4/Sobel.cpp:47->SobelLab4/Sobel.cpp:89) [73]  (0 ns)
+	'add' operation ('tmp_22', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) [75]  (2.33 ns)
+	'getelementptr' operation ('y_op_addr', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) [77]  (0 ns)
+	'load' operation ('y_op_load', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) on array 'y_op' [94]  (3.25 ns)
+
+ <State 6>: 7.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_23', SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89) to 'getVal' [85]  (7.08 ns)
+
+ <State 7>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('tmp_23', SobelLab4/Sobel.cpp:49->SobelLab4/Sobel.cpp:89) to 'getVal' [85]  (8.75 ns)
+
+ <State 8>: 7.08ns
+The critical path consists of the following:
+	'call' operation ('tmp_24', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) to 'getVal' [92]  (7.08 ns)
+
+ <State 9>: 8.75ns
+The critical path consists of the following:
+	'call' operation ('tmp_24', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) to 'getVal' [92]  (8.75 ns)
+
+ <State 10>: 6.38ns
+The critical path consists of the following:
+	'mul' operation ('tmp_20', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) [96]  (3.36 ns)
+	'add' operation ('y_weight', SobelLab4/Sobel.cpp:52->SobelLab4/Sobel.cpp:89) [98]  (3.02 ns)
+
+ <State 11>: 4.98ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_12', SobelLab4/Sobel.cpp:61->SobelLab4/Sobel.cpp:89) [113]  (2.91 ns)
+	'select' operation ('p_i', SobelLab4/Sobel.cpp:89) [115]  (0 ns)
+	'select' operation ('val', SobelLab4/Sobel.cpp:89) [117]  (2.07 ns)
+
+ <State 12>: 8.52ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', SobelLab4/Sobel.cpp:91) [120]  (0 ns)
+	'icmp' operation ('tmp_31', SobelLab4/Sobel.cpp:91) [130]  (3.31 ns)
+	'select' operation ('tmp_38', SobelLab4/Sobel.cpp:91) [137]  (0 ns)
+	'shl' operation ('tmp_43', SobelLab4/Sobel.cpp:89) [142]  (3.15 ns)
+	'select' operation ('tmp_45', SobelLab4/Sobel.cpp:91) [144]  (0 ns)
+	'and' operation ('tmp_50', SobelLab4/Sobel.cpp:91) [150]  (0 ns)
+	'or' operation ('four', SobelLab4/Sobel.cpp:91) [151]  (2.07 ns)
+	'store' operation (SobelLab4/Sobel.cpp:90) of variable 'four', SobelLab4/Sobel.cpp:91 on local variable 'four' [152]  (0 ns)
+
+ <State 13>: 8.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('gmem2_addr_1', SobelLab4/Sobel.cpp:84) [157]  (0 ns)
+	bus request on port 'gmem2' (SobelLab4/Sobel.cpp:94) [158]  (8.75 ns)
+
+ <State 14>: 8.75ns
+The critical path consists of the following:
+	'load' operation ('four_load', SobelLab4/Sobel.cpp:94) on local variable 'four' [155]  (0 ns)
+	bus write on port 'gmem2' (SobelLab4/Sobel.cpp:94) [159]  (8.75 ns)
+
+ <State 15>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:94) [160]  (8.75 ns)
+
+ <State 16>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:94) [160]  (8.75 ns)
+
+ <State 17>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:94) [160]  (8.75 ns)
+
+ <State 18>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:94) [160]  (8.75 ns)
+
+ <State 19>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:94) [160]  (8.75 ns)
+
+ <State 20>: 8.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('gmem2_addr', SobelLab4/Sobel.cpp:84) [164]  (0 ns)
+	bus request on port 'gmem2' (SobelLab4/Sobel.cpp:86) [165]  (8.75 ns)
+
+ <State 21>: 8.75ns
+The critical path consists of the following:
+	bus write on port 'gmem2' (SobelLab4/Sobel.cpp:86) [166]  (8.75 ns)
+
+ <State 22>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:86) [167]  (8.75 ns)
+
+ <State 23>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:86) [167]  (8.75 ns)
+
+ <State 24>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:86) [167]  (8.75 ns)
+
+ <State 25>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:86) [167]  (8.75 ns)
+
+ <State 26>: 8.75ns
+The critical path consists of the following:
+	bus access on port 'gmem2' (SobelLab4/Sobel.cpp:86) [167]  (8.75 ns)
 
 
 ============================================================
@@ -212,6 +819,27 @@ N/A
 	State 3
 	State 4
 	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
 
 
 ============================================================

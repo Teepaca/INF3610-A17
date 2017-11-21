@@ -1,5 +1,5 @@
-# 1 "C:/TEMP/3610_4/1788287_1799919/SobelLab4/solution1/.autopilot/db/Sobel.pragma.1.cpp"
-# 1 "C:/TEMP/3610_4/1788287_1799919/SobelLab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 1
+# 1 "C:/TEMP/Labo4/SobelLab4/solution1/.autopilot/db/Sobel.pragma.1.cpp"
+# 1 "C:/TEMP/Labo4/SobelLab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 1
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 153 "<built-in>" 3
@@ -203,7 +203,7 @@ extern "C" {
 // 67d7842dbbe25473c3c32b93c0da8047785f30d78e8a024de1b57352245f9689
 # 8 "<command line>" 2
 # 1 "<built-in>" 2
-# 1 "C:/TEMP/3610_4/1788287_1799919/SobelLab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 2
+# 1 "C:/TEMP/Labo4/SobelLab4/solution1/.autopilot/db/Sobel.pragma.1.cpp" 2
 # 1 "SobelLab4/Sobel.cpp"
 # 1 "SobelLab4/Sobel.cpp" 1
 # 1 "<built-in>" 1
@@ -900,6 +900,7 @@ uintmax_t wcstoumax (const wchar_t* __restrict__ nptr,
 
 
 
+uint8_t sobel_operator(const int fullIndex, uint8_t * image);
 void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080]);
 # 2 "SobelLab4/Sobel.cpp" 2
 # 1 "C:/Logiciels/Xilinx/Vivado_HLS/2017.2/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 1 3
@@ -1094,6 +1095,10 @@ typedef union {
  unsigned full;
 } OneToFourPixels;
 
+static inline uint8_t getVal(int index, int xDiff, int yDiff, uint8_t * Y)
+{
+ return Y[index + (yDiff * 1920) + xDiff];
+};
 
 uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 {
@@ -1110,7 +1115,48 @@ _ssdm_InlineSelf(0, "");/* Inliner la fonction lui permet d'être "copiée-collée"
 	 * que les entrées de la fonction sobel_filtrer() sont 1D. Cependant, si pour une raison ou une autre
 	 * un buffer-cache intermédiaire était utilisé, celui-ci pourrait être 2D...
 	 */
- return 0;
+ int x_weight = 0;
+ int y_weight = 0;
+
+ unsigned edge_weight;
+ uint8_t edge_val;
+
+ const char x_op[3][3] = { { -1,0,1 },
+        { -2,0,2 },
+        { -1,0,1 } };
+_ssdm_SpecConstant(x_op);
+# 39 "SobelLab4/Sobel.cpp"
+
+
+ const char y_op[3][3] = { { 1,2,1 },
+        { 0,0,0 },
+        { -1,-2,-1 } };
+_ssdm_SpecConstant(y_op);
+# 43 "SobelLab4/Sobel.cpp"
+
+
+ //Compute approximation of the gradients in the X-Y direction
+ for (int i = 0; i < 3; i++) {
+  for (int j = 0; j < 3; j++) {
+   // X direction gradient
+   x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, image) * x_op[i][j]);
+
+   // Y direction gradient
+   y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1, image) * y_op[i][j]);
+  }
+ }
+
+ edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
+
+ edge_val = (255 - (uint8_t)(edge_weight));
+
+ //Edge thresholding
+ if (edge_val > 200)
+  edge_val = 255;
+ else if (edge_val < 100)
+  edge_val = 0;
+
+ return edge_val;
 }
 
 
@@ -1123,17 +1169,35 @@ void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
 	 * auxquelles il doit aller chercher et écrire l'image, lui dire de démarrer ou d'arrêter, etc.
 	 */
  // ***** LES 3 LIGNES SUIVANTES DOIVENT ÊTRE DÉCOMMENTÉES UNE FOIS LES QUESTIONS INITIALES COMPLÉTÉES!! ******
-//#pragma HLS INTERFACE m_axi port=inter_pix offset=slave
-//#pragma HLS INTERFACE m_axi port=out_pix offset=slave
-//#pragma HLS INTERFACE s_axilite port=return
+_ssdm_op_SpecInterface(inter_pix, "m_axi", 0, 0, "", 0, 0, "", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(out_pix, "m_axi", 0, 0, "", 0, 0, "", "slave", "", 16, 16, 16, 16, "", "");
+_ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+
+ for (unsigned int i = 0; i < 1080; i++) {
+  for (unsigned int j = 0; j < 1920; j++) {
+   if (i==0 || i==1080 - 1 || j==0 || j==1920 - 1) {
+    out_pix[i*1920 +j] = 0;
+   }
+   else {
+    uint8_t val = sobel_operator(i*1920 + j, inter_pix);
+    OneToFourPixels four;
+    for (int j = 0; j < 4; j++) {
+     four.pix[j] = val;
+    }
+    out_pix[i*1920 +j] = four.full;
+   }
+  }
+ }
 
  // À remplacer par votre fonction *après* avoir répondu aux questions initiales
-IMG: for (int i = 0; i < 1920 * 1080; ++i) {
-_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
- uint8_t val = inter_pix[i];
-  OneToFourPixels fourWide;
-OneTo4: for (int j = 0; j < 4; ++j)
-   fourWide.pix[j] = val;
-  out_pix[i] = fourWide.full;
- }
+/*
+IMG: for (int i = 0; i < IMG_WIDTH * IMG_HEIGHT; ++i) {
+#pragma HLS pipeline
+		uint8_t val = inter_pix[i];
+		OneToFourPixels fourWide;
+OneTo4:	for (int j = 0; j < 4; ++j)
+			fourWide.pix[j] = val;
+		out_pix[i] = fourWide.full;
+	}
+*/
 }
