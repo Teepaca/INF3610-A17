@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Fri Nov 24 12:54:49 2017
+# Process ID: 8672
+# Current directory: C:/TEMP/Labo4/lab4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10584 C:\TEMP\Labo4\lab4\lab4.xpr
+# Log file: C:/TEMP/Labo4/lab4/vivado.log
+# Journal file: C:/TEMP/Labo4/lab4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/TEMP/Labo4/lab4/lab4.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace C:/TEMP/Labo4/lab4/lab4.sdk -hwspec C:/TEMP/Labo4/lab4/lab4.sdk/design_1_wrapper.hdf

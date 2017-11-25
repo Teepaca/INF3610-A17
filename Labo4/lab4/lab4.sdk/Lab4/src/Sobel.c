@@ -3,17 +3,21 @@
 
 #define ABS(x)          ((x>0)? x : -x)
 
+/*
 typedef union {
 	uint8_t pix[4];
 	unsigned full;
 } OneToFourPixels;
+*/
 
+/*
 static inline uint8_t getVal(int index, int xDiff, int yDiff, uint8_t * Y)
 {
 	return Y[index + (yDiff * IMG_WIDTH) + xDiff];
 };
+*/
 
-uint8_t sobel_operator(const int fullIndex, uint8_t * image)
+uint8_t sobel_operator(const int col, const int row, uint8_t image[IMG_HEIGHT][IMG_WIDTH])
 {
 #pragma HLS inline			// Inliner la fonction lui permet d'être "copiée-collée" là où elle est appellée
 							// et ainsi faciliter le pipelinage de la boucle principale
@@ -46,10 +50,12 @@ uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			// X direction gradient
-			x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, image) * x_op[i][j]);
+			x_weight = x_weight + image[col+i-1][row+j-1] * x_op[i][j];
+			//x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, image) * x_op[i][j]);
 
 			// Y direction gradient
-			y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1,  image) * y_op[i][j]);
+			y_weight = y_weight + image[col+i-1][row+j-1] * y_op[i][j];
+			//y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1,  image) * y_op[i][j]);
 		}
 	}
 
@@ -67,7 +73,7 @@ uint8_t sobel_operator(const int fullIndex, uint8_t * image)
 }
 
 
-void sobel_filter(uint8_t inter_pix[IMG_WIDTH * IMG_HEIGHT], unsigned out_pix[IMG_WIDTH * IMG_HEIGHT])
+void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned out_pix[IMG_HEIGHT][IMG_WIDTH])
 {
 	/* On demande à HLS de nous synthétiser des maîtres AXI que l'on connectera à la mémoire principale.
 	 * Ainsi, le CPU n'a pas besoin de transférer l'image au filtre: c'est le filtre qui va chercher l'image
@@ -83,15 +89,17 @@ void sobel_filter(uint8_t inter_pix[IMG_WIDTH * IMG_HEIGHT], unsigned out_pix[IM
 	for (unsigned int i = 0; i < IMG_HEIGHT; i++) {
 		for (unsigned int j = 0; j < IMG_WIDTH; j++) {
 			if (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1) {
-				out_pix[i*IMG_WIDTH+j] = 0;
+				out_pix[i][j] = 0;
 			}
 			else {
-				uint8_t val = sobel_operator(i*IMG_WIDTH + j, inter_pix);
+				unsigned int val = (unsigned int)sobel_operator(i, j, inter_pix);
+				/*
 				OneToFourPixels four;
 				for (int j = 0; j < 4; j++) {
 					four.pix[j] = val;
 				}
-				out_pix[i*IMG_WIDTH+j] = four.full;
+				*/
+				out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
 			}
 		}
 	}

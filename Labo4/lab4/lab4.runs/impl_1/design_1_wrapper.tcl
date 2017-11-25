@@ -51,19 +51,22 @@ set rc [catch {
   set_property board_part em.avnet.com:zed:part0:1.3 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/TEMP/3610_4/1788287_1799919/lab4/lab4.cache/wt [current_project]
-  set_property parent.project_path C:/TEMP/3610_4/1788287_1799919/lab4/lab4.xpr [current_project]
-  set_property ip_repo_paths C:/TEMP/3610_4/1788287_1799919/ip_repo [current_project]
-  set_property ip_output_repo C:/TEMP/3610_4/1788287_1799919/lab4/lab4.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/TEMP/Labo4/lab4/lab4.cache/wt [current_project]
+  set_property parent.project_path C:/TEMP/Labo4/lab4/lab4.xpr [current_project]
+  set_property ip_repo_paths {
+  c:/TEMP/Labo4/ip_repo
+  C:/TEMP/Labo4/SobelLab4
+} [current_project]
+  set_property ip_output_repo C:/TEMP/Labo4/lab4/lab4.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet C:/TEMP/3610_4/1788287_1799919/lab4/lab4.runs/synth_1/design_1_wrapper.dcp
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
+  add_files -quiet C:/TEMP/Labo4/lab4/lab4.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -suppress
   set_param project.isImplRun true
-  add_files C:/TEMP/3610_4/1788287_1799919/lab4/lab4.srcs/sources_1/bd/design_1/design_1.bd
-  set_property is_locked true [get_files C:/TEMP/3610_4/1788287_1799919/lab4/lab4.srcs/sources_1/bd/design_1/design_1.bd]
+  add_files C:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/design_1.bd
+  set_property is_locked true [get_files C:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/design_1.bd]
   set_param project.isImplRun false
-  read_xdc C:/TEMP/3610_4/1788287_1799919/ip_repo/AVNET_ZED_HDMI/constraints/zedboard_hdmi_display.xdc
+  read_xdc C:/TEMP/Labo4/ip_repo/AVNET_ZED_HDMI/constraints/zedboard_hdmi_display.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7z020clg484-1
   set_param project.isImplRun false
@@ -142,7 +145,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force design_1_wrapper.mmi }
   write_bitstream -force design_1_wrapper.bit 
   catch { write_sysdef -hwdef design_1_wrapper.hwdef -bitfile design_1_wrapper.bit -meminfo design_1_wrapper.mmi -file design_1_wrapper.sysdef }

@@ -9,6 +9,7 @@
 #include "platform.h"
 #include "hdmi/zed_hdmi_display.h"
 #include "Sobel.h"			//décommentez lorsqu'il existera
+#include <xsobel_filter.h>
 
 void hdmiInit(zed_hdmi_display_t * hdmiConfig)
 {
@@ -35,18 +36,21 @@ void show_video( zed_hdmi_display_t *pDemo, const uint8_t * frame, int frameSize
 
 }
 
-void doSobel(/* paramètres à passer ici */)
+void doSobel(XSobel_filter* filter)
 {
 	XTime before, after;
 
 	/* Configurez votre filtre ici */
+	while (!XSobel_filter_IsReady(filter));
 
 	printf("Starting Sobel\n");
 	XTime_GetTime(&before);
 
 	// Démarrez votre filtre ici
+	XSobel_filter_Start(filter);
 
-	while(/*Attendez que votre filtre termine*/ true);
+	//while(/*Attendez que votre filtre termine*/ true);
+	while(!XSobel_filter_IsDone(filter));
 
 	XTime_GetTime(&after);
 
@@ -171,13 +175,21 @@ int main()
 
 	// À compléter: Initialisation du filtre de Sobel matériel
 
+	XSobel_filter filter;
+	XSobel_filter_Initialize(&filter, XPAR_SOBEL_FILTER_0_DEVICE_ID);
+	filter.Axilites_BaseAddress = XPAR_SOBEL_FILTER_0_S_AXI_AXILITES_BASEADDR;
+	XSobel_filter_Set_out_pix(&filter, hdmiConfig.uBaseAddr_MEM_HdmiDisplay);
+
 	XTime_SetTime(0);
+
 
 	while(1) {
 		for (int i = 0; i < fInfo.fsize; i += 1920*1080) {
 			//show_video(&hdmiConfig, &data[i], 1920*1080);
-			doSobelSW(data+i, (unsigned *)(&hdmiConfig)->uBaseAddr_MEM_HdmiDisplay);
-			//doSobel( /* paramètres à compléter ici */);
+			//doSobelSW(data+i, (unsigned *)(&hdmiConfig)->uBaseAddr_MEM_HdmiDisplay);
+
+			XSobel_filter_Set_inter_pix(&filter, (unsigned int)&data[i]);
+			doSobel(&filter);
 		}
 	}
 

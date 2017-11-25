@@ -893,15 +893,10 @@ uintmax_t wcstoumax (const wchar_t* __restrict__ nptr,
 
 }
 # 3 "SobelLab4/Sobel.h" 2
-
-
-
-
-
-
-
-uint8_t sobel_operator(const int fullIndex, uint8_t * image);
-void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080]);
+# 13 "SobelLab4/Sobel.h"
+uint8_t sobel_operator(const int col, const int row, uint8_t image[1080][1920]);
+uint8_t sobel_operator_cache(const int col, const int row, uint8_t cache[4][1920]);
+void sobel_filter(uint8_t inter_pix[1080][1920], unsigned out_pix[1080][1920]);
 # 2 "SobelLab4/Sobel.cpp" 2
 # 1 "C:/Logiciels/Xilinx/Vivado_HLS/2017.2/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\string.h" 1 3
 /**
@@ -1090,18 +1085,22 @@ extern "C" {
 
 
 
+/*
 typedef union {
- uint8_t pix[4];
- unsigned full;
+	uint8_t pix[4];
+	unsigned full;
 } OneToFourPixels;
+*/
 
+/*
 static inline uint8_t getVal(int index, int xDiff, int yDiff, uint8_t * Y)
 {
- return Y[index + (yDiff * 1920) + xDiff];
+	return Y[index + (yDiff * IMG_WIDTH) + xDiff];
 };
+*/
 
-uint8_t sobel_operator(const int fullIndex, uint8_t * image)
-{
+uint8_t sobel_operator(const int col, const int row, uint8_t image[1080][1920])
+{_ssdm_SpecArrayDimSize(image,1080);
 _ssdm_InlineSelf(0, "");/* Inliner la fonction lui permet d'être "copiée-collée" là où elle est appellée*/
  // et ainsi faciliter le pipelinage de la boucle principale
  /* À compléter en important votre code du lab 3.
@@ -1125,24 +1124,90 @@ _ssdm_InlineSelf(0, "");/* Inliner la fonction lui permet d'être "copiée-collée"
         { -2,0,2 },
         { -1,0,1 } };
 _ssdm_SpecConstant(x_op);
-# 39 "SobelLab4/Sobel.cpp"
+# 43 "SobelLab4/Sobel.cpp"
 
 
  const char y_op[3][3] = { { 1,2,1 },
         { 0,0,0 },
         { -1,-2,-1 } };
 _ssdm_SpecConstant(y_op);
-# 43 "SobelLab4/Sobel.cpp"
+# 47 "SobelLab4/Sobel.cpp"
 
 
  //Compute approximation of the gradients in the X-Y direction
  for (int i = 0; i < 3; i++) {
   for (int j = 0; j < 3; j++) {
    // X direction gradient
-   x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, image) * x_op[i][j]);
+   x_weight = x_weight + image[col+i-1][row+j-1] * x_op[i][j];
+   //x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, image) * x_op[i][j]);
 
    // Y direction gradient
-   y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1, image) * y_op[i][j]);
+   y_weight = y_weight + image[col+i-1][row+j-1] * y_op[i][j];
+   //y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1,  image) * y_op[i][j]);
+  }
+ }
+
+ edge_weight = ((x_weight>0)? x_weight : -x_weight) + ((y_weight>0)? y_weight : -y_weight);
+
+ edge_val = (255 - (uint8_t)(edge_weight));
+
+ //Edge thresholding
+ if (edge_val > 200)
+  edge_val = 255;
+ else if (edge_val < 100)
+  edge_val = 0;
+
+ return edge_val;
+}
+
+uint8_t sobel_operator_cache(const int col, const int row, uint8_t cache[4][1920])
+{_ssdm_SpecArrayDimSize(cache,4);
+_ssdm_InlineSelf(0, "");/* Inliner la fonction lui permet d'être "copiée-collée" là où elle est appellée*/
+ // et ainsi faciliter le pipelinage de la boucle principale
+ /* À compléter en important votre code du lab 3.
+	 * À noter que la fonction peut avoir 3 signatures différentes, selon vos différentes modifications:
+	 * uint8_t sobel_operator(const int fullIndex, uint8_t * image)
+	 * uint8_t sobel_operator(const int fullIndex, uint8_t image[IMG_HEIGHT * IMG_WIDTH])
+	 * uint8_t sobel_operator(const int col, const int row, uint8_t image[IMG_HEIGHT][IMG_WIDTH])
+	 *
+	 * Les deux premières sont assez équivalentes, mais la dernière permet d'accéder à l'image comme un
+	 * tableau 2D. Par contre, un tableau 2D doit alors lui être passé, ce qui n'est pas évident considérant
+	 * que les entrées de la fonction sobel_filtrer() sont 1D. Cependant, si pour une raison ou une autre
+	 * un buffer-cache intermédiaire était utilisé, celui-ci pourrait être 2D...
+	 */
+ int x_weight = 0;
+ int y_weight = 0;
+
+ unsigned edge_weight;
+ uint8_t edge_val;
+
+ const char x_op[3][3] = { { -1,0,1 },
+        { -2,0,2 },
+        { -1,0,1 } };
+_ssdm_SpecConstant(x_op);
+# 98 "SobelLab4/Sobel.cpp"
+
+
+ const char y_op[3][3] = { { 1,2,1 },
+        { 0,0,0 },
+        { -1,-2,-1 } };
+_ssdm_SpecConstant(y_op);
+# 102 "SobelLab4/Sobel.cpp"
+
+
+ //Compute approximation of the gradients in the X-Y direction
+
+ SobelX : for (int i = 0; i < 3; i++) {
+_ssdm_Unroll(0,0,0, "");
+ SobelY : for (int j = 0; j < 3; j++) {
+_ssdm_Unroll(0,0,0, "");
+ // X direction gradient
+   x_weight = x_weight + cache[(col+i-1+4)&0x03][row+j-1] * x_op[i][j];
+   //x_weight = x_weight + (getVal(fullIndex, i - 1, j - 1, image) * x_op[i][j]);
+
+   // Y direction gradient
+   y_weight = y_weight + cache[(col+i-1+4)&0x03][row+j-1] * y_op[i][j];
+   //y_weight = y_weight + (getVal(fullIndex, i - 1, j - 1,  image) * y_op[i][j]);
   }
  }
 
@@ -1160,8 +1225,8 @@ _ssdm_SpecConstant(y_op);
 }
 
 
-void sobel_filter(uint8_t inter_pix[1920 * 1080], unsigned out_pix[1920 * 1080])
-{_ssdm_SpecArrayDimSize(out_pix,1920 * 1080);_ssdm_SpecArrayDimSize(inter_pix,1920 * 1080);
+void sobel_filter(uint8_t inter_pix[1080][1920], unsigned out_pix[1080][1920])
+{_ssdm_SpecArrayDimSize(out_pix,1080);_ssdm_SpecArrayDimSize(inter_pix,1080);
  /* On demande à HLS de nous synthétiser des maîtres AXI que l'on connectera à la mémoire principale.
 	 * Ainsi, le CPU n'a pas besoin de transférer l'image au filtre: c'est le filtre qui va chercher l'image
 	 * dans la mémoire principale (DDR de la carte) et écrit le résultat dans cette même mémoire.
@@ -1173,22 +1238,55 @@ _ssdm_op_SpecInterface(inter_pix, "m_axi", 0, 0, "", 0, 0, "", "slave", "", 16, 
 _ssdm_op_SpecInterface(out_pix, "m_axi", 0, 0, "", 0, 0, "", "slave", "", 16, 16, 16, 16, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 
+ // Load initial cache
+ uint8_t lineBuffer[4][1920];
+_ssdm_SpecArrayPartition( lineBuffer, 1, "COMPLETE", 0, "");
+ unsigned int lastLine = 0;
+ LoadCache : for (;lastLine < 3; lastLine++){
+  LoadLine : for (unsigned int i = 0; i < 1920; i++){
+   lineBuffer[lastLine][i] = inter_pix[lastLine][i];
+  }
+
+ }
  for (unsigned int i = 0; i < 1080; i++) {
-  for (unsigned int j = 0; j < 1920; j++) {
-   if (i==0 || i==1080 - 1 || j==0 || j==1920 - 1) {
-    out_pix[i*1920 +j] = 0;
+_ssdm_Unroll(1, 0, 10, "");
+ for (unsigned int j = 0; j < 1920; j++) {
+_ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
+_ssdm_SpecLoopFlatten(1, "");
+ if (i==0 || i==1080 - 1 || j==0 || j==1920 - 1) {
+    out_pix[i][j] = 0;
    }
    else {
-    uint8_t val = sobel_operator(i*1920 + j, inter_pix);
-    OneToFourPixels four;
-    for (int j = 0; j < 4; j++) {
-     four.pix[j] = val;
-    }
-    out_pix[i*1920 +j] = four.full;
+    unsigned int val = (unsigned int)sobel_operator_cache((lastLine - 2)&0x03, j, lineBuffer);
+    out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
+    lineBuffer[lastLine&0x03][j] = inter_pix[lastLine][j];
    }
+  }
+  if (i!=0 && i!=1080 -1) {
+   lastLine++;
   }
  }
 
+
+ /*
+	for (unsigned int i = 0; i < IMG_HEIGHT; i++) {
+		for (unsigned int j = 0; j < IMG_WIDTH; j++) {
+			if (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1) {
+				out_pix[i][j] = 0;
+			}
+			else {
+				unsigned int val = (unsigned int)sobel_operator(i, j, inter_pix);
+
+				OneToFourPixels four;
+				for (int j = 0; j < 4; j++) {
+					four.pix[j] = val;
+				}
+
+				out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
+			}
+		}
+	}
+	*/
  // À remplacer par votre fonction *après* avoir répondu aux questions initiales
 /*
 IMG: for (int i = 0; i < IMG_WIDTH * IMG_HEIGHT; ++i) {

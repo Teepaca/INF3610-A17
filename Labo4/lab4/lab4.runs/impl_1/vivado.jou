@@ -2,11 +2,11 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Nov 10 13:28:00 2017
-# Process ID: 25412
-# Current directory: C:/TEMP/3610_4/1788287_1799919/lab4/lab4.runs/impl_1
+# Start of session at: Fri Nov 24 18:45:53 2017
+# Process ID: 10516
+# Current directory: C:/TEMP/Labo4/lab4/lab4.runs/impl_1
 # Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
-# Log file: C:/TEMP/3610_4/1788287_1799919/lab4/lab4.runs/impl_1/design_1_wrapper.vdi
-# Journal file: C:/TEMP/3610_4/1788287_1799919/lab4/lab4.runs/impl_1\vivado.jou
+# Log file: C:/TEMP/Labo4/lab4/lab4.runs/impl_1/design_1_wrapper.vdi
+# Journal file: C:/TEMP/Labo4/lab4/lab4.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

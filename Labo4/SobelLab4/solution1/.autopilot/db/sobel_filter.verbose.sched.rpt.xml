@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'sobel_filter'" level="0">
-<item name = "Date">Mon Nov 20 19:59:36 2017
+<item name = "Date">Fri Nov 24 18:57:30 2017
 </item>
 <item name = "Version">2017.2 (Build 1909853 on Thu Jun 15 18:55:24 MDT 2017)</item>
 <item name = "Project">SobelLab4</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.75, 1.25</column>
+<column name="ap_clk">10.00, 9.15, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">18664561, 491445361, 18664562, 491445362, none</column>
+<column name="">4179377, 4179377, 4179378, 4179378, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,11 +35,19 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Loop 1">18664560, 491445360, 17282 ~ 455042, -, -, 1080, no</column>
-<column name=" + Loop 1.1">17280, 455040, 9 ~ 237, -, -, 1920, no</column>
-<column name="  ++ Loop 1.1.1">222, 222, 74, -, -, 3, no</column>
-<column name="   +++ Loop 1.1.1.1">72, 72, 24, -, -, 3, no</column>
-<column name="  ++ Loop 1.1.2">4, 4, 1, -, -, 4, no</column>
+<column name="- LoadCache">11547, 11547, 3849, -, -, 3, no</column>
+<column name=" + LoadLine">3840, 3840, 2, -, -, 1920, no</column>
+<column name="- Loop 2">4167828, 4167828, 38591, -, -, 108, no</column>
+<column name=" + Loop 2.1">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.2">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.3">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.4">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.5">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.6">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.7">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.8">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.9">3857, 3857, 20, 2, 1, 1920, yes</column>
+<column name=" + Loop 2.10">3857, 3857, 20, 2, 1, 1920, yes</column>
 </table>
 </item>
 </section>

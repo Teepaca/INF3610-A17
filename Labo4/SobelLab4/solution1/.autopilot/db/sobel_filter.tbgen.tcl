@@ -1,5 +1,5 @@
 set C_TypeInfoList {{ 
-"sobel_filter" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"inter_pix": [[], {"array": ["0", [2073600]]}] }, {"out_pix": [[], {"array": [ {"scalar": "unsigned int"}, [2073600]]}] }],[],""], 
+"sobel_filter" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"inter_pix": [[], {"array": [ {"array": ["0", [1920]]}, [1080]]}] }, {"out_pix": [[], {"array": [ {"array": [ {"scalar": "unsigned int"}, [1920]]}, [1080]]}] }],[],""], 
 "0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}]
 }}
 set moduleName sobel_filter
@@ -20,8 +20,8 @@ set C_modelArgList {
 	{ out_pix int 32 regular {axi_slave 0}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "inter_pix","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "inter_pix","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 2073599,"step" : 1}]}]}]} , 
- 	{ "Name" : "gmem2", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "out_pix","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "out_pix","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 2073599,"step" : 1}]}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 8, "direction" : "READONLY", "bitSlice":[{"low":0,"up":7,"cElement": [{"cName": "inter_pix","cData": "unsigned char","bit_use": { "low": 0,"up": 7},"offset": { "type": "dynamic","port_name": "inter_pix","bundle": "AXILiteS"},"direction": "READONLY","cArray": [{"low" : 0,"up" : 1079,"step" : 1},{"low" : 0,"up" : 1919,"step" : 1}]}]}]} , 
+ 	{ "Name" : "gmem2", "interface" : "axi_master", "bitwidth" : 32, "direction" : "WRITEONLY", "bitSlice":[{"low":0,"up":31,"cElement": [{"cName": "out_pix","cData": "unsigned int","bit_use": { "low": 0,"up": 31},"offset": { "type": "dynamic","port_name": "out_pix","bundle": "AXILiteS"},"direction": "WRITEONLY","cArray": [{"low" : 0,"up" : 1079,"step" : 1},{"low" : 0,"up" : 1919,"step" : 1}]}]}]} , 
  	{ "Name" : "inter_pix", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
  	{ "Name" : "out_pix", "interface" : "axi_slave", "bundle":"AXILiteS","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} ]}
 # RTL Port declarations: 
@@ -251,7 +251,7 @@ set NewPortList {[
  	{ "name": "m_axi_gmem2_BUSER", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem2", "role": "BUSER" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
 		"CDFG" : "sobel_filter",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -259,71 +259,68 @@ set RtlHierarchyInfo {[
 		"Datapath" : "0",
 		"ClockEnable" : "0",
 		"VariableLatency" : "1",
-		"WaitState" : [
-			{"State" : "ap_ST_fsm_state7", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_getVal_fu_276"},
-			{"State" : "ap_ST_fsm_state9", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_getVal_fu_276"}],
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I",
-				"SubConnect" : [
-					{"ID" : "6", "SubInstance" : "grp_getVal_fu_276", "Port" : "Y"}]},
+				"BlockSignal" : [
+					{"Name" : "gmem_blk_n_AR", "Type" : "RtlSignal"},
+					{"Name" : "gmem_blk_n_R", "Type" : "RtlSignal"}]},
 			{"Name" : "gmem2", "Type" : "MAXI", "Direction" : "O",
 				"BlockSignal" : [
 					{"Name" : "gmem2_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "gmem2_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "gmem2_blk_n_B", "Type" : "RtlSignal"}]},
 			{"Name" : "inter_pix", "Type" : "None", "Direction" : "I"},
-			{"Name" : "out_pix", "Type" : "None", "Direction" : "I"},
-			{"Name" : "x_op", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "y_op", "Type" : "Memory", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.x_op_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.y_op_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_AXILiteS_s_axi_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem_m_axi_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem2_m_axi_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_getVal_fu_276", "Parent" : "0",
-		"CDFG" : "getVal",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
-		"Pipeline" : "None", "AlignedPipeline" : "0", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"VariableLatency" : "1",
-		"Port" : [
-			{"Name" : "index", "Type" : "None", "Direction" : "I"},
-			{"Name" : "xDiff", "Type" : "None", "Direction" : "I"},
-			{"Name" : "yDiff", "Type" : "None", "Direction" : "I"},
-			{"Name" : "Y", "Type" : "MAXI", "Direction" : "I",
-				"BlockSignal" : [
-					{"Name" : "Y_blk_n_AR", "Type" : "RtlSignal"},
-					{"Name" : "Y_blk_n_R", "Type" : "RtlSignal"}]},
-			{"Name" : "inter_pix1", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mac_bkb_U5", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mac_bkb_U6", "Parent" : "0"}]}
+			{"Name" : "out_pix", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_AXILiteS_s_axi_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem_m_axi_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_gmem2_m_axi_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.lineBuffer_0_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.lineBuffer_1_U", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.lineBuffer_2_U", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.lineBuffer_3_U", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U0", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U1", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U2", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U3", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U4", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U5", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U6", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U7", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U8", "Parent" : "0"},
+	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U9", "Parent" : "0"},
+	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U10", "Parent" : "0"},
+	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U11", "Parent" : "0"},
+	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U12", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U13", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U14", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sobel_filter_mux_fYi_U15", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	sobel_filter {
-		gmem {Type I LastRead 9 FirstWrite -1}
-		gmem2 {Type O LastRead 8 FirstWrite 4}
+		gmem {Type I LastRead 29 FirstWrite -1}
+		gmem2 {Type O LastRead 37 FirstWrite 17}
 		inter_pix {Type I LastRead 0 FirstWrite -1}
-		out_pix {Type I LastRead 0 FirstWrite -1}
-		x_op {Type I LastRead -1 FirstWrite -1}
-		y_op {Type I LastRead -1 FirstWrite -1}}
-	getVal {
-		index {Type I LastRead 1 FirstWrite -1}
-		xDiff {Type I LastRead 0 FirstWrite -1}
-		yDiff {Type I LastRead 0 FirstWrite -1}
-		Y {Type I LastRead 9 FirstWrite -1}
-		inter_pix1 {Type I LastRead 1 FirstWrite -1}}}
+		out_pix {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "18664561", "Max" : "491445361"}
-	, {"Name" : "Interval", "Min" : "18664562", "Max" : "491445362"}
+	{"Name" : "Latency", "Min" : "4179377", "Max" : "4179377"}
+	, {"Name" : "Interval", "Min" : "4179378", "Max" : "4179378"}
 ]}
 
 set PipelineEnableSignalInfo {[
+	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
+	{"Pipeline" : "1", "EnableSignal" : "ap_enable_pp1"}
+	{"Pipeline" : "2", "EnableSignal" : "ap_enable_pp2"}
+	{"Pipeline" : "3", "EnableSignal" : "ap_enable_pp3"}
+	{"Pipeline" : "4", "EnableSignal" : "ap_enable_pp4"}
+	{"Pipeline" : "5", "EnableSignal" : "ap_enable_pp5"}
+	{"Pipeline" : "6", "EnableSignal" : "ap_enable_pp6"}
+	{"Pipeline" : "7", "EnableSignal" : "ap_enable_pp7"}
+	{"Pipeline" : "8", "EnableSignal" : "ap_enable_pp8"}
+	{"Pipeline" : "9", "EnableSignal" : "ap_enable_pp9"}
 ]}
 
 set Spec2ImplPortList { 

@@ -11,7 +11,7 @@ set Const0 "0"
 set Volatile0 "0"
 set Pointer0 "0"
 set Reference0 "0"
-set Dims0 [list 2073600]
+set Dims0 [list 1080 1920]
 set Interface0 "wire"
 set DataType0 "unsigned char"
 set Port0 [list $PortName0 $Interface0 $DataType0 $Pointer0 $Dims0 $Const0 $Volatile0 $ArrayOpt0]
@@ -23,7 +23,7 @@ set Const1 "0"
 set Volatile1 "0"
 set Pointer1 "0"
 set Reference1 "0"
-set Dims1 [list 2073600]
+set Dims1 [list 1080 1920]
 set Interface1 "wire"
 set DataType1 "unsigned int"
 set Port1 [list $PortName1 $Interface1 $DataType1 $Pointer1 $Dims1 $Const1 $Volatile1 $ArrayOpt1]
