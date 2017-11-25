@@ -148,7 +148,7 @@ void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned int out_pix
 	uint8_t lineBuffer[4][IMG_WIDTH];
 #pragma HLS ARRAY_PARTITION variable=lineBuffer complete dim=1
 	unsigned int lastLine = 0;
-	LoadCache : for (;lastLine < 3; lastLine++){
+	LoadCache : for (;lastLine < 2; lastLine++){
 		LoadLine : for (unsigned int i = 0; i < IMG_WIDTH; i++){
 			lineBuffer[lastLine][i] = inter_pix[lastLine][i];
 		}
