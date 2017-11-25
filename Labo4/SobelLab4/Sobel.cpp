@@ -131,7 +131,7 @@ uint8_t sobel_operator_cache(const int col, const int row, uint8_t cache[CACHE_H
 }
 
 
-void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned out_pix[IMG_HEIGHT][IMG_WIDTH])
+void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned int out_pix[IMG_HEIGHT][IMG_WIDTH])
 {
 	/* On demande à HLS de nous synthétiser des maîtres AXI que l'on connectera à la mémoire principale.
 	 * Ainsi, le CPU n'a pas besoin de transférer l'image au filtre: c'est le filtre qui va chercher l'image
@@ -158,7 +158,7 @@ void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned out_pix[IMG
 		ImageY : for (unsigned int j = 0; j < IMG_WIDTH; j++) {
 #pragma HLS pipeline
 #pragma HLS loop_flatten off
-			unsigned int val = (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1)?((unsigned int)sobel_operator_cache((lastLine - 3)&CACHE_MOD_MASK, j, lineBuffer)) : 0;
+			unsigned int val = (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1) ? 0 : ((unsigned int)sobel_operator_cache(i&CACHE_MOD_MASK, j, lineBuffer));
 			out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
 			lineBuffer[lastLine&CACHE_MOD_MASK][j] = inter_pix[lastLine][j];
 		}
