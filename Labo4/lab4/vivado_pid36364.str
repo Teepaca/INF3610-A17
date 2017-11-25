@@ -1,0 +1,104 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 36364
+License: Customer
+
+Current time: 	11/20/17 8:01:42 PM EST
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 2
+Available disk space: 329 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Logiciels/Xilinx/Vivado/2017.2/tps/win64/jre
+JVM executable location: 	C:/Logiciels/Xilinx/Vivado/2017.2/tps/win64/jre/bin/java.exe
+Java library paths: C:/Logiciels/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o;C:/Windows/Sun/Java/bin;C:/Windows/system32;C:/Windows;C:/Logiciels/Xilinx/Vivado/2017.2/bin;C:/Logiciels/Xilinx/Vivado/2017.2/lib/win64.o;C:/Logiciels/Xilinx/Vivado/2017.2/tps/win64/jre/bin/server;C:/Logiciels/Xilinx/Vivado/2017.2/tps/win64/jre/bin;C:/Logiciels/Xilinx/SDK/2017.2/bin;C:/Logiciels/Xilinx/Vivado/2017.2/ids_lite/ISE/bin/nt64;C:/Logiciels/Xilinx/Vivado/2017.2/ids_lite/ISE/lib/nt64;C:/Logiciels/Xilinx/Vivado_HLS/2017.2/bin;C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v6.5/bin;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v6.5/libnvvp;C:/Logiciels/Tcl/bin;C:/Logiciels/Python27/;C:/Logiciels/Python27/Scripts;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/;C:/Program Files/Microsoft SQL Server/110/Tools/Binn/;C:/Program Files/TortoiseSVN/bin;C:/Logiciels/cygwin64/bin;C:/Program Files/doxygen/bin;C:/Program Files/MATLAB/R2014a/bin;C:/Aldec/Active-HDL 8.3/BIN;;c:/logiciels/Active-HDL 8.3/BIN;C:/Program Files/TortoiseGit/bin;C:/Logiciels/uppaal-tiga-0.16/bin-Win32;C:/Program Files (x86)/PuTTY/;C:/Logiciels/Aldec/Active-HDL-10.4a/bin;C:/ProgramData/npm;C:/Program Files/Java/jdk1.8.0_121/bin;C:/Program Files/Microsoft SQL Server/130/Tools/Binn/;C:/Program Files/dotnet/;C:/Program Files/MATLAB/R2017a/bin;C:/Users/feboug/AppData/Local/Microsoft/WindowsApps;C:/Logiciels/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/bin;C:/Logiciels/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	feboug
+User home directory: C:/Users/feboug
+User working directory: C:/TEMP/Labo4/lab4
+User country: 	CA
+User language: 	fr
+User locale: 	fr_CA
+
+RDI_BASEROOT: C:/Logiciels/Xilinx/Vivado
+HDI_APPROOT: C:/Logiciels/Xilinx/Vivado/2017.2
+RDI_DATADIR: C:/Logiciels/Xilinx/Vivado/2017.2/data
+RDI_BINDIR: C:/Logiciels/Xilinx/Vivado/2017.2/bin
+
+User preferences location: C:/Users/feboug/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/feboug/AppData/Roaming/Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: C:/Users/feboug/AppData/Roaming/Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	C:/Logiciels/Xilinx/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	C:/TEMP/Labo4/lab4/.Xil/Vivado-36364-L3712-01
+
+GUI allocated memory:	179 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 547 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: C:\TEMP\Labo4\lab4\lab4.xpr. Version: Vivado v2017.2 
+// bs:g (cg:JFrame):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/TEMP/Labo4/lab4/lab4.xpr 
+// [GUI Memory]: 58 MB (+58844kb) [00:00:06]
+// [Engine Memory]: 512 MB (+385346kb) [00:00:06]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 555 MB. GUI used memory: 35 MB. Current time: 11/20/17 8:01:44 PM EST
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 555 MB (+18413kb) [00:00:11]
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 594 MB (+11652kb) [00:00:13]
+// [GUI Memory]: 70 MB (+8823kb) [00:00:16]
+// Tcl Message: open_project C:/TEMP/Labo4/lab4/lab4.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/TEMP/3610_4/1788287_1799919/lab4' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/TEMP/Labo4/ip_repo'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Logiciels/Xilinx/Vivado/2017.2/data/ip'. 
+// [Engine Memory]: 657 MB (+35311kb) [00:00:18]
+// Tcl Message: open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:13 . Memory (MB): peak = 870.879 ; gain = 112.414 
+// Project name: lab4; location: C:/TEMP/Labo4/lab4; part: xc7z020clg484-1
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [GUI Memory]: 75 MB (+1260kb) [00:00:20]
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z:JMenu (JPopupMenu:JComponent, cg:JFrame)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac:JMenuItem (JPopupMenu:JComponent, cg:JFrame)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U:JideMenu (CommandMenuBar:CommandBar, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa:p (cg:JFrame): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a:JButton (JPanel:JComponent, aa:p)
+dismissDialog("Launch SDK"); // aa:p (cg:JFrame)
+// Tcl Message: launch_sdk -workspace C:/TEMP/Labo4/lab4/lab4.sdk -hwspec C:/TEMP/Labo4/lab4/lab4.sdk/design_1_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/TEMP/Labo4/lab4/lab4.sdk -hwspec C:/TEMP/Labo4/lab4/lab4.sdk/design_1_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// [GUI Memory]: 81 MB (+3170kb) [00:00:41]
+// [GUI Memory]: 88 MB (+3092kb) [00:00:51]
+// [GUI Memory]: 93 MB (+215kb) [00:03:26]
+// [GUI Memory]: 98 MB (+396kb) [00:04:26]
+// [GUI Memory]: 105 MB (+2322kb) [00:10:51]
+// HMemoryUtils.trashcanNow. Engine heap size: 690 MB. GUI used memory: 50 MB. Current time: 11/20/17 8:13:39 PM EST
+// [Engine Memory]: 710 MB (+21104kb) [00:12:10]
