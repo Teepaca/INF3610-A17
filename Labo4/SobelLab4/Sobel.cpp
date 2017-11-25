@@ -154,6 +154,18 @@ void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned out_pix[IMG
 		}
 
 	}
+	ImageX : for (unsigned int i = 0; i < IMG_HEIGHT; i++) {
+		ImageY : for (unsigned int j = 0; j < IMG_WIDTH; j++) {
+#pragma HLS pipeline
+#pragma HLS loop_flatten off
+			unsigned int val = (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1)?((unsigned int)sobel_operator_cache((lastLine - 3)&CACHE_MOD_MASK, j, lineBuffer)) : 0;
+			out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
+			lineBuffer[lastLine&CACHE_MOD_MASK][j] = inter_pix[lastLine][j];
+		}
+		lastLine++;
+	}
+
+	/*
 	for (unsigned int i = 0; i < IMG_HEIGHT; i++) {
 		for (unsigned int j = 0; j < IMG_WIDTH; j++) {
 #pragma HLS pipeline
@@ -171,6 +183,7 @@ void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned out_pix[IMG
 			lastLine++;
 		}
 	}
+	*/
 
 
 	/*

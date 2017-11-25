@@ -1,91 +1,50 @@
-INFO: [HLS 200-10] Running 'C:/Logiciels/Xilinx/Vivado_HLS/2017.2/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'feboug' on host 'l3712-09' (Windows NT_amd64 version 6.2) on Fri Nov 24 18:57:21 -0500 2017
-INFO: [HLS 200-10] In directory 'C:/TEMP/Labo4'
-INFO: [HLS 200-10] Opening project 'C:/TEMP/Labo4/SobelLab4'.
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Félix' on host 'hurricane-pc' (Windows NT_amd64 version 6.2) on Sat Nov 25 00:28:32 -0500 2017
+INFO: [HLS 200-10] In directory 'D:/Polytechnique/A17/INF3610/INF3610/Labo4'
+INFO: [HLS 200-10] Opening project 'D:/Polytechnique/A17/INF3610/INF3610/Labo4/SobelLab4'.
 INFO: [HLS 200-10] Adding design file 'SobelLab4/Sobel.cpp' to the project
-INFO: [HLS 200-10] Adding test bench file 'SobelLab4/ap_bmp.cpp' to the project
 INFO: [HLS 200-10] Adding test bench file 'SobelLab4/sobel_test.cpp' to the project
-INFO: [HLS 200-10] Opening solution 'C:/TEMP/Labo4/SobelLab4/solution1'.
+INFO: [HLS 200-10] Adding test bench file 'SobelLab4/ap_bmp.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'D:/Polytechnique/A17/INF3610/INF3610/Labo4/SobelLab4/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
 INFO: [HLS 200-10] Analyzing design file 'SobelLab4/Sobel.cpp' ... 
 INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 95.359 ; gain = 45.285
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 95.379 ; gain = 45.305
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 100.770 ; gain = 45.301
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 100.809 ; gain = 45.340
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'sobel_operator_cache' into 'sobel_filter' (SobelLab4/Sobel.cpp:166).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 97.191 ; gain = 47.117
+INFO: [XFORM 203-603] Inlining function 'sobel_operator_cache' into 'sobel_filter' (SobelLab4/Sobel.cpp:161).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 102.742 ; gain = 47.273
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 97.410 ; gain = 47.336
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2.1' (SobelLab4/Sobel.cpp:159) in function 'sobel_filter' for pipelining.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (SobelLab4/Sobel.cpp:157) in function 'sobel_filter' partially with a factor of 10.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 102.969 ; gain = 47.500
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'ImageY' (SobelLab4/Sobel.cpp:158) in function 'sobel_filter' for pipelining.
 INFO: [XFORM 203-501] Unrolling loop 'SobelX' (SobelLab4/Sobel.cpp:106) in function 'sobel_filter' completely.
 INFO: [XFORM 203-501] Unrolling loop 'SobelY' (SobelLab4/Sobel.cpp:108) in function 'sobel_filter' completely.
 INFO: [XFORM 203-101] Partitioning array 'lineBuffer' (SobelLab4/Sobel.cpp:148) in dimension 1 completely.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:111:4) to (SobelLab4/Sobel.cpp:168:5) in function 'sobel_filter'... converting 3 basic blocks.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 122.633 ; gain = 72.559
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SobelLab4/Sobel.cpp:158:53) to (SobelLab4/Sobel.cpp:163:4) in function 'sobel_filter'... converting 5 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'sobel_filter' (SobelLab4/Sobel.cpp:134)...6 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 124.457 ; gain = 68.988
 INFO: [XFORM 203-811] Inferring bus burst read of length 1920 on port 'gmem' (SobelLab4/Sobel.cpp:153:4).
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 126.988 ; gain = 76.914
+INFO: [XFORM 203-811] Inferring bus burst write of length 1920 on port 'gmem2' (SobelLab4/Sobel.cpp:162:4).
+INFO: [XFORM 203-811] Inferring bus burst read of length 1920 on port 'gmem' (SobelLab4/Sobel.cpp:163:4).
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 124.457 ; gain = 68.988
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'sobel_filter' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Implementing module 'sobel_filter' 
+INFO: [HLS 200-42] -- Implementing module 'sobel_filter' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.2'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_3', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.3'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_6', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.4'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_9', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.5'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_12', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.6'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_15', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.7'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_18', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.8'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_21', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.9'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_24', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-INFO: [SCHED 204-61] Pipelining loop 'Loop 2.10'.
-WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load_27', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:166) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports.
-INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 2, Depth: 20.
-WARNING: [SCHED 204-21] Estimated clock period (9.15ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
-WARNING: [SCHED 204-21] The critical path consists of the following:
-	'phi' operation ('row_assign', SobelLab4/Sobel.cpp:159) with incoming values : ('j_1', SobelLab4/Sobel.cpp:159) (0 ns)
-	'add' operation ('tmp_78', SobelLab4/Sobel.cpp:163) (2.59 ns)
-	'add' operation ('out_pix4_sum', SobelLab4/Sobel.cpp:163) (2.82 ns)
-	'getelementptr' operation ('gmem2_addr', SobelLab4/Sobel.cpp:163) (0 ns)
-	blocking operation 3.73 ns on control path)
+INFO: [SCHED 204-61] Pipelining loop 'ImageY'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:161) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'lineBuffer_0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 6.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 9.338 seconds; current allocated memory: 92.694 MB.
+INFO: [HLS 200-111]  Elapsed time: 8.831 seconds; current allocated memory: 76.370 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 1.898 seconds; current allocated memory: 97.599 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.204 seconds; current allocated memory: 77.110 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'sobel_filter' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -99,14 +58,14 @@ INFO: [SYN 201-210] Renamed object name 'sobel_filter_lineBuffer_0' to 'sobel_fi
 INFO: [SYN 201-210] Renamed object name 'sobel_filter_lineBuffer_1' to 'sobel_filter_linecud' due to the length limit 20
 INFO: [SYN 201-210] Renamed object name 'sobel_filter_lineBuffer_2' to 'sobel_filter_linedEe' due to the length limit 20
 INFO: [SYN 201-210] Renamed object name 'sobel_filter_lineBuffer_3' to 'sobel_filter_lineeOg' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'sobel_filter_mux_42_8_1' to 'sobel_filter_mux_fYi' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'sobel_filter_mux_fYi': 16 instance(s).
+INFO: [SYN 201-210] Renamed object name 'sobel_filter_mux_42_8_1_1' to 'sobel_filter_mux_fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'sobel_filter_mux_fYi': 8 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'sobel_filter'.
-INFO: [HLS 200-111]  Elapsed time: 2.383 seconds; current allocated memory: 107.233 MB.
-INFO: [RTMG 210-278] Implementing memory 'sobel_filter_linebkb_ram' using block RAMs.
-INFO: [RTMG 210-278] Implementing memory 'sobel_filter_lineeOg_ram' using block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 176.836 ; gain = 126.762
+INFO: [HLS 200-111]  Elapsed time: 0.328 seconds; current allocated memory: 79.074 MB.
+INFO: [RTMG 210-278] Implementing memory 'sobel_filter_linebkb_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'sobel_filter_lineeOg_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 129.188 ; gain = 73.719
 INFO: [SYSC 207-301] Generating SystemC RTL for sobel_filter.
 INFO: [VHDL 208-304] Generating VHDL RTL for sobel_filter.
 INFO: [VLOG 209-307] Generating Verilog RTL for sobel_filter.
-INFO: [HLS 200-112] Total elapsed time: 20.611 seconds; peak allocated memory: 107.233 MB.
+INFO: [HLS 200-112] Total elapsed time: 10.633 seconds; peak allocated memory: 79.074 MB.
