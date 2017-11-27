@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-//Date        : Fri Nov 24 18:11:52 2017
+//Date        : Fri Nov 24 18:42:34 2017
 //Host        : L3712-09 running 64-bit major release  (build 9200)
 //Command     : generate_target bd_afc3.bd
 //Design      : bd_afc3

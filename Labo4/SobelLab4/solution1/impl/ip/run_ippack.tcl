@@ -34,7 +34,7 @@ set Library     "hls"
 set IPName      "sobel_filter"
 set Version     "1.0"
 set DisplayName "Sobel"
-set Revision    "1711241841"
+set Revision    "1711271254"
 set Description "Sobel"
 set Device      "zynq"
 set Taxonomy    "/VIVADO_HLS_IP"
@@ -2134,7 +2134,7 @@ if {![regexp -nocase {2014\.3.*} $vivado_ver match]} {
 ipx::create_xgui_files -logo_file misc/logo.png $core
 
 ## System Info
-set user_parameters_list {clk_period 10.000000 machine 64 combinational 0 latency 4180349 II x}
+set user_parameters_list {clk_period 10.000000 machine 64 combinational 0 latency 4174340 II x}
 foreach {user_para value} $user_parameters_list {
     incr user_parameter_order
     set user_para_value [ipx::add_user_parameter $user_para $core]
@@ -2152,7 +2152,7 @@ ipx::archive_core [file join [pwd] $ZipFile] $core
 
 ## Generate XO file if kernel.xml file is dumped
 set enable_xo_gen 0
-set kernel_files {C:/TEMP/Labo4/SobelLab4/Sobel.cpp}
+set kernel_files {C:/TEMP/INF3610/Labo4/SobelLab4/Sobel.cpp}
 if {$enable_xo_gen} {
     set sdaccel_dir [file join [pwd] .. sdaccel]
     set db_dir [file join [pwd] .. .. .autopilot db]

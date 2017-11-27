@@ -2,12 +2,12 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Nov 24 18:42:53 2017
-# Process ID: 10984
-# Current directory: C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1
+# Start of session at: Mon Nov 27 12:56:08 2017
+# Process ID: 6168
+# Current directory: C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1
 # Command line: vivado.exe -log design_1_sobel_filter_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sobel_filter_0_0.tcl
-# Log file: C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.vds
-# Journal file: C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1\vivado.jou
+# Log file: C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.vds
+# Journal file: C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source design_1_sobel_filter_0_0.tcl -notrace
 Command: synth_design -top design_1_sobel_filter_0_0 -part xc7z020clg484-1 -mode out_of_context
@@ -15,27 +15,38 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020-clg484'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020-clg484'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8960 
+INFO: Helper process launched with PID 12572 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 345.074 ; gain = 80.914
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 345.063 ; gain = 80.305
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_sobel_filter_0_0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/synth/design_1_sobel_filter_0_0.v:56]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:12]
-	Parameter ap_ST_fsm_state1 bound to: 15'b000000000000001 
-	Parameter ap_ST_fsm_state2 bound to: 15'b000000000000010 
-	Parameter ap_ST_fsm_state3 bound to: 15'b000000000000100 
-	Parameter ap_ST_fsm_state4 bound to: 15'b000000000001000 
-	Parameter ap_ST_fsm_state5 bound to: 15'b000000000010000 
-	Parameter ap_ST_fsm_state6 bound to: 15'b000000000100000 
-	Parameter ap_ST_fsm_state7 bound to: 15'b000000001000000 
-	Parameter ap_ST_fsm_state8 bound to: 15'b000000010000000 
-	Parameter ap_ST_fsm_state9 bound to: 15'b000000100000000 
-	Parameter ap_ST_fsm_state10 bound to: 15'b000001000000000 
-	Parameter ap_ST_fsm_state11 bound to: 15'b000010000000000 
-	Parameter ap_ST_fsm_state12 bound to: 15'b000100000000000 
-	Parameter ap_ST_fsm_pp0_stage0 bound to: 15'b001000000000000 
-	Parameter ap_ST_fsm_pp0_stage1 bound to: 15'b010000000000000 
-	Parameter ap_ST_fsm_state33 bound to: 15'b100000000000000 
+INFO: [Synth 8-638] synthesizing module 'design_1_sobel_filter_0_0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/synth/design_1_sobel_filter_0_0.v:56]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 26'b00000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 26'b00000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 26'b00000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 26'b00000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 26'b00000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 26'b00000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 26'b00000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 26'b00000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 26'b00000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 26'b00000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 26'b00000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 26'b00000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 26'b00000000000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 26'b00000000000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 26'b00000000000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 26'b00000000001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 26'b00000000010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 26'b00000000100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 26'b00000001000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 26'b00000010000000000000000000 
+	Parameter ap_ST_fsm_pp0_stage1 bound to: 26'b00000100000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 26'b00001000000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 26'b00010000000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 26'b00100000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 26'b01000000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 26'b10000000000000000000000000 
 	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_AXILITES_ADDR_WIDTH bound to: 5 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -67,8 +78,8 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter' [c:/TEMP/Labo4/lab4/lab4.
 	Parameter C_M_AXI_GMEM_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
 	Parameter C_M_AXI_GMEM2_WSTRB_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:288]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_AXILiteS_s_axi' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:299]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_AXILiteS_s_axi' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:9]
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 5 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDR_AP_CTRL bound to: 5'b00000 
@@ -87,11 +98,11 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_AXILiteS_s_axi' [c:/TEMP/L
 	Parameter RDDATA bound to: 2'b01 
 	Parameter RDRESET bound to: 2'b10 
 	Parameter ADDR_BITS bound to: 5 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:203]
-WARNING: [Synth 8-6014] Unused sequential element int_isr_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:233]
-WARNING: [Synth 8-6014] Unused sequential element int_isr_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:308]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_AXILiteS_s_axi' (1#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:9]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:10]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:203]
+WARNING: [Synth 8-6014] Unused sequential element int_isr_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:233]
+WARNING: [Synth 8-6014] Unused sequential element int_isr_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:308]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_AXILiteS_s_axi' (1#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:10]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
@@ -111,12 +122,12 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi' [c:/TEMP/Labo4
 	Parameter USER_DW bound to: 8 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_throttl' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:687]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_throttl' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:687]
 	Parameter USED_FIX bound to: 0 - type: integer 
 	Parameter FIX_VALUE bound to: 4 - type: integer 
 	Parameter threshold bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_throttl' (2#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:687]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_write' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1500]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_throttl' (2#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:687]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_write' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1500]
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -141,58 +152,58 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_write' [c:/TEMP
 	Parameter NUM_WRITE_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 0 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
 	Parameter DATA_BITS bound to: 12 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo' (3#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_decoder' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:671]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo' (3#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_decoder' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:671]
 	Parameter DIN_WIDTH bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_decoder' (4#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:671]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_reg_slice' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_decoder' (4#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:671]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_reg_slice' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
 	Parameter N bound to: 64 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_reg_slice' (5#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_reg_slice' (5#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized0' (5#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_buffer' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized0' (5#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_buffer' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 9 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_buffer' (6#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized1' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_buffer' (6#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized1' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized1' (6#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized2' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized1' (6#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized2' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized2' (6#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[1].data_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[1].strb_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[2].data_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[2].strb_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[3].data_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[3].strb_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[4].data_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[4].strb_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
-WARNING: [Synth 8-3848] Net AWREGION in module/entity sobel_filter_gmem_m_axi_write does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1532]
-WARNING: [Synth 8-3848] Net WID in module/entity sobel_filter_gmem_m_axi_write does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1537]
-WARNING: [Synth 8-3848] Net WUSER in module/entity sobel_filter_gmem_m_axi_write does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1541]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_write' (7#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1500]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_read' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:739]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_fifo__parameterized2' (6#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:397]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[1].data_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[1].strb_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[2].data_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[2].strb_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[3].data_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[3].strb_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[4].data_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2358]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.data_gen[4].strb_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2367]
+WARNING: [Synth 8-3848] Net AWREGION in module/entity sobel_filter_gmem_m_axi_write does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1532]
+WARNING: [Synth 8-3848] Net WID in module/entity sobel_filter_gmem_m_axi_write does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1537]
+WARNING: [Synth 8-3848] Net WUSER in module/entity sobel_filter_gmem_m_axi_write does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1541]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_write' (7#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1500]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_read' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:739]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -216,22 +227,22 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_read' [c:/TEMP/
 	Parameter NUM_READ_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 0 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_buffer__parameterized0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_buffer__parameterized0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 35 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_buffer__parameterized0' (7#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_reg_slice__parameterized0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_buffer__parameterized0' (7#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:506]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem_m_axi_reg_slice__parameterized0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
 	Parameter N bound to: 10 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_reg_slice__parameterized0' (7#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
-WARNING: [Synth 8-3848] Net ARREGION in module/entity sobel_filter_gmem_m_axi_read does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:770]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_read' (8#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:739]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi' (9#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:10]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:10]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_reg_slice__parameterized0' (7#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:293]
+WARNING: [Synth 8-3848] Net ARREGION in module/entity sobel_filter_gmem_m_axi_read does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:770]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi_read' (8#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:739]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem_m_axi' (9#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:10]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:10]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
@@ -251,12 +262,12 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi' [c:/TEMP/Labo
 	Parameter USER_DW bound to: 32 - type: integer 
 	Parameter USER_AW bound to: 32 - type: integer 
 	Parameter USER_MAXREQS bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_throttl' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:687]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_throttl' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:687]
 	Parameter USED_FIX bound to: 0 - type: integer 
 	Parameter FIX_VALUE bound to: 4 - type: integer 
 	Parameter threshold bound to: 0 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_throttl' (10#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:687]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_write' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1500]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_throttl' (10#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:687]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_write' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1500]
 	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -281,48 +292,48 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_write' [c:/TEM
 	Parameter NUM_WRITE_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 0 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
 	Parameter DATA_BITS bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo' (11#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo' (11#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
 	Parameter N bound to: 64 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice' (12#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice' (12#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
 	Parameter DATA_BITS bound to: 64 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized0' (12#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_buffer' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized0' (12#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_buffer' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 36 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_buffer' (13#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized1' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_buffer' (13#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized1' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 15 - type: integer 
 	Parameter DEPTH_BITS bound to: 4 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized1' (13#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized2' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized1' (13#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized2' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
 	Parameter DATA_BITS bound to: 2 - type: integer 
 	Parameter DEPTH bound to: 5 - type: integer 
 	Parameter DEPTH_BITS bound to: 3 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized2' (13#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
-WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1864]
-WARNING: [Synth 8-3848] Net AWREGION in module/entity sobel_filter_gmem2_m_axi_write does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1532]
-WARNING: [Synth 8-3848] Net WID in module/entity sobel_filter_gmem2_m_axi_write does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1537]
-WARNING: [Synth 8-3848] Net WUSER in module/entity sobel_filter_gmem2_m_axi_write does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1541]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_write' (14#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1500]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_read' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:739]
+WARNING: [Synth 8-6014] Unused sequential element i was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:495]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_fifo__parameterized2' (13#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:397]
+WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1864]
+WARNING: [Synth 8-3848] Net AWREGION in module/entity sobel_filter_gmem2_m_axi_write does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1532]
+WARNING: [Synth 8-3848] Net WID in module/entity sobel_filter_gmem2_m_axi_write does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1537]
+WARNING: [Synth 8-3848] Net WUSER in module/entity sobel_filter_gmem2_m_axi_write does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1541]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_write' (14#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1500]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_read' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:739]
 	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
 	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
 	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
@@ -346,45 +357,45 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_read' [c:/TEMP
 	Parameter NUM_READ_WIDTH bound to: 4 - type: integer 
 	Parameter TARGET_ADDR bound to: 0 - type: integer 
 	Parameter BOUNDARY_BEATS bound to: 10'b1111111111 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_buffer__parameterized0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_buffer__parameterized0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
 	Parameter MEM_STYLE bound to: block - type: string 
 	Parameter DATA_WIDTH bound to: 35 - type: integer 
 	Parameter ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter DEPTH bound to: 256 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_buffer__parameterized0' (14#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice__parameterized0' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_buffer__parameterized0' (14#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:506]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice__parameterized0' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
 	Parameter N bound to: 34 - type: integer 
 	Parameter ZERO bound to: 2'b10 
 	Parameter ONE bound to: 2'b11 
 	Parameter TWO bound to: 2'b01 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice__parameterized0' (14#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
-WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:1070]
-WARNING: [Synth 8-3848] Net ARREGION in module/entity sobel_filter_gmem2_m_axi_read does not have driver. [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:770]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_read' (15#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:739]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi' (16#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:10]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_linebkb' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_linebkb.v:58]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_reg_slice__parameterized0' (14#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:293]
+WARNING: [Synth 8-6014] Unused sequential element sect_end_buf_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:1070]
+WARNING: [Synth 8-3848] Net ARREGION in module/entity sobel_filter_gmem2_m_axi_read does not have driver. [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:770]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi_read' (15#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:739]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_gmem2_m_axi' (16#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:10]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_linebkb' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linebkb.v:66]
 	Parameter DataWidth bound to: 8 - type: integer 
 	Parameter AddressRange bound to: 1920 - type: integer 
 	Parameter AddressWidth bound to: 11 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_linebkb_ram' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_linebkb.v:9]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_linebkb_ram' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linebkb.v:9]
 	Parameter DWIDTH bound to: 8 - type: integer 
 	Parameter AWIDTH bound to: 11 - type: integer 
 	Parameter MEM_SIZE bound to: 1920 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_linebkb.v:25]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_linebkb_ram' (17#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_linebkb.v:9]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_linebkb' (18#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_linebkb.v:58]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_lineeOg' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_lineeOg.v:58]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linebkb.v:27]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_linebkb_ram' (17#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linebkb.v:9]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_linebkb' (18#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linebkb.v:66]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_linedEe' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linedEe.v:58]
 	Parameter DataWidth bound to: 8 - type: integer 
 	Parameter AddressRange bound to: 1920 - type: integer 
 	Parameter AddressWidth bound to: 11 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_lineeOg_ram' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_lineeOg.v:9]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_linedEe_ram' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linedEe.v:9]
 	Parameter DWIDTH bound to: 8 - type: integer 
 	Parameter AWIDTH bound to: 11 - type: integer 
 	Parameter MEM_SIZE bound to: 1920 - type: integer 
-INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_lineeOg.v:25]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_lineeOg_ram' (19#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_lineeOg.v:9]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_lineeOg' (20#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_lineeOg.v:58]
-INFO: [Synth 8-638] synthesizing module 'sobel_filter_mux_fYi' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_mux_fYi.v:11]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linedEe.v:25]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_linedEe_ram' (19#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linedEe.v:9]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_linedEe' (20#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_linedEe.v:58]
+INFO: [Synth 8-638] synthesizing module 'sobel_filter_mux_fYi' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_mux_fYi.v:11]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 1 - type: integer 
 	Parameter din1_WIDTH bound to: 8 - type: integer 
@@ -393,52 +404,36 @@ INFO: [Synth 8-638] synthesizing module 'sobel_filter_mux_fYi' [c:/TEMP/Labo4/la
 	Parameter din4_WIDTH bound to: 8 - type: integer 
 	Parameter din5_WIDTH bound to: 2 - type: integer 
 	Parameter dout_WIDTH bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter_mux_fYi' (21#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_mux_fYi.v:11]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2144]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2166]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2174]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2232]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2252]
-WARNING: [Synth 8-6014] Unused sequential element ap_idle_pp0_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1513]
-WARNING: [Synth 8-6014] Unused sequential element gmem2_blk_n_AW_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1591]
-WARNING: [Synth 8-6014] Unused sequential element gmem2_blk_n_B_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1599]
-WARNING: [Synth 8-6014] Unused sequential element gmem2_blk_n_W_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1607]
-WARNING: [Synth 8-6014] Unused sequential element gmem_blk_n_AR_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1659]
-WARNING: [Synth 8-6014] Unused sequential element gmem_blk_n_R_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1667]
-WARNING: [Synth 8-6014] Unused sequential element ap_block_state10_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2039]
-WARNING: [Synth 8-6014] Unused sequential element ap_block_state21_pp0_stage0_iter4_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2063]
-WARNING: [Synth 8-6014] Unused sequential element ap_block_state32_pp0_stage1_iter9_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2095]
-WARNING: [Synth 8-6014] Unused sequential element ap_ready_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:665]
-WARNING: [Synth 8-6014] Unused sequential element grp_fu_386_p0_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1685]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_1_address1_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:931]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_1_ce0_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:927]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_1_ce1_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:932]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_2_address1_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:948]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_2_ce0_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:944]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_2_ce1_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:949]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_3_ce0_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:961]
-WARNING: [Synth 8-6014] Unused sequential element lineBuffer_3_ce1_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:964]
-WARNING: [Synth 8-6014] Unused sequential element ap_block_pp0_stage0_flag00011011_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2021]
-WARNING: [Synth 8-6014] Unused sequential element ap_block_pp0_stage1_flag00011011_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2035]
-WARNING: [Synth 8-6014] Unused sequential element ap_predicate_op255_write_state27_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2125]
-WARNING: [Synth 8-6014] Unused sequential element ap_predicate_op256_write_state27_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2129]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter1_row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1310]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter2_row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1316]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter3_row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1322]
-WARNING: [Synth 8-6014] Unused sequential element row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1310]
-WARNING: [Synth 8-6014] Unused sequential element tmp_37_reg_1057_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1370]
-WARNING: [Synth 8-6014] Unused sequential element tmp_41_cast_reg_1062_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1371]
-WARNING: [Synth 8-6014] Unused sequential element tmp_s_reg_1015_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1378]
-WARNING: [Synth 8-6014] Unused sequential element tmp_s_reg_1015_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2172]
-WARNING: [Synth 8-6014] Unused sequential element tmp_37_reg_1057_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2280]
-WARNING: [Synth 8-6014] Unused sequential element tmp_41_cast_reg_1062_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2282]
-WARNING: [Synth 8-6014] Unused sequential element row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2332]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter1_row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2333]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter2_row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2334]
-WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter3_row_assign_cast5_reg_1105_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2335]
-INFO: [Synth 8-256] done synthesizing module 'sobel_filter' (22#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:12]
-INFO: [Synth 8-256] done synthesizing module 'design_1_sobel_filter_0_0' (23#1) [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/synth/design_1_sobel_filter_0_0.v:56]
-WARNING: [Synth 8-3331] design sobel_filter_lineeOg has unconnected port reset
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter_mux_fYi' (21#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_mux_fYi.v:11]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1892]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1914]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1992]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2002]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2054]
+WARNING: [Synth 8-6014] Unused sequential element ap_idle_pp0_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1342]
+WARNING: [Synth 8-6014] Unused sequential element gmem2_blk_n_AW_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1406]
+WARNING: [Synth 8-6014] Unused sequential element gmem2_blk_n_B_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1414]
+WARNING: [Synth 8-6014] Unused sequential element gmem2_blk_n_W_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1422]
+WARNING: [Synth 8-6014] Unused sequential element gmem_blk_n_AR_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1460]
+WARNING: [Synth 8-6014] Unused sequential element gmem_blk_n_R_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1468]
+WARNING: [Synth 8-6014] Unused sequential element ap_block_state10_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1865]
+WARNING: [Synth 8-6014] Unused sequential element ap_block_state21_pp0_stage1_iter0_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1871]
+WARNING: [Synth 8-6014] Unused sequential element ap_ready_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:603]
+WARNING: [Synth 8-6014] Unused sequential element lineBuffer_1_ce0_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:867]
+WARNING: [Synth 8-6014] Unused sequential element lineBuffer_1_ce1_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:872]
+WARNING: [Synth 8-6014] Unused sequential element lineBuffer_2_ce1_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:889]
+WARNING: [Synth 8-6014] Unused sequential element lineBuffer_3_address0_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:902]
+WARNING: [Synth 8-6014] Unused sequential element lineBuffer_3_ce0_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:903]
+WARNING: [Synth 8-6014] Unused sequential element lineBuffer_3_ce1_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:906]
+WARNING: [Synth 8-6014] Unused sequential element ap_block_pp0_stage0_flag00011011_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1851]
+WARNING: [Synth 8-6014] Unused sequential element ap_block_pp0_stage1_flag00011011_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1861]
+WARNING: [Synth 8-6014] Unused sequential element row_assign_cast_reg_1125_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1196]
+WARNING: [Synth 8-6014] Unused sequential element tmp_13_reg_1029_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1237]
+WARNING: [Synth 8-6014] Unused sequential element tmp_13_reg_1029_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2030]
+WARNING: [Synth 8-6014] Unused sequential element row_assign_cast_reg_1125_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1952]
+INFO: [Synth 8-256] done synthesizing module 'sobel_filter' (22#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:12]
+INFO: [Synth 8-256] done synthesizing module 'design_1_sobel_filter_0_0' (23#1) [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/synth/design_1_sobel_filter_0_0.v:56]
+WARNING: [Synth 8-3331] design sobel_filter_linedEe has unconnected port reset
 WARNING: [Synth 8-3331] design sobel_filter_linebkb has unconnected port reset
 WARNING: [Synth 8-3331] design sobel_filter_gmem2_m_axi_read has unconnected port ARREGION[3]
 WARNING: [Synth 8-3331] design sobel_filter_gmem2_m_axi_read has unconnected port ARREGION[2]
@@ -540,7 +535,7 @@ WARNING: [Synth 8-3331] design sobel_filter_gmem_m_axi has unconnected port I_AW
 WARNING: [Synth 8-3331] design sobel_filter_gmem_m_axi has unconnected port I_AWREGION[2]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 407.195 ; gain = 143.035
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 405.180 ; gain = 140.422
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -550,113 +545,125 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 407.195 ; gain = 143.035
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 405.180 ; gain = 140.422
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/constraints/sobel_filter_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/constraints/sobel_filter_ooc.xdc] for cell 'inst'
-Parsing XDC File [C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/constraints/sobel_filter_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/constraints/sobel_filter_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.165 . Memory (MB): peak = 739.672 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.217 . Memory (MB): peak = 737.582 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:46 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:57 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:46 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:57 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:46 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:57 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'sobel_filter_AXILiteS_s_axi'
-WARNING: [Synth 8-6014] Unused sequential element wstate_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:117]
+WARNING: [Synth 8-6014] Unused sequential element wstate_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_AXILiteS_s_axi.v:117]
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:721]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:587]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:485]
-WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:483]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[8] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[12] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1934]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:2316]
-WARNING: [Synth 8-6014] Unused sequential element sect_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1809]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:589]
-WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:587]
-WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1127]
-WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1343]
-WARNING: [Synth 8-6014] Unused sequential element sect_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem_m_axi.v:1026]
-WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:721]
-WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:721]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:587]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:483]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[5] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[6] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[7] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[8] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[9] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[10] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[11] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[12] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[13] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[14] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1934]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:2316]
+WARNING: [Synth 8-6014] Unused sequential element sect_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1809]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:587]
+WARNING: [Synth 8-6014] Unused sequential element could_multi_bursts.loop_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1127]
+WARNING: [Synth 8-6014] Unused sequential element bus_wide_gen.len_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1343]
+WARNING: [Synth 8-6014] Unused sequential element sect_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem_m_axi.v:1026]
+WARNING: [Synth 8-6014] Unused sequential element throttl_cnt_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:721]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:589]
+WARNING: [Synth 8-6014] Unused sequential element usedw_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:587]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:485]
+WARNING: [Synth 8-6014] Unused sequential element pout_reg was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:483]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[0] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[1] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[2] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[3] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
+WARNING: [Synth 8-6014] Unused sequential element mem_reg[4] was removed.  [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:498]
 INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:589]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:485]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter_gmem2_m_axi.v:589]
-INFO: [Synth 8-4471] merging register 'lineBuffer_1_addr_2_reg_1152_reg[10:0]' into 'lineBuffer_0_addr_2_reg_1147_reg[10:0]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1391]
-INFO: [Synth 8-4471] merging register 'lineBuffer_2_addr_2_reg_1157_reg[10:0]' into 'lineBuffer_0_addr_2_reg_1147_reg[10:0]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1392]
-INFO: [Synth 8-4471] merging register 'lineBuffer_3_addr_1_reg_1162_reg[10:0]' into 'lineBuffer_0_addr_2_reg_1147_reg[10:0]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1393]
-INFO: [Synth 8-4471] merging register 'lineBuffer_1_addr_reg_1047_reg[10:0]' into 'lineBuffer_0_addr_reg_1042_reg[10:0]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1400]
-INFO: [Synth 8-4471] merging register 'lineBuffer_2_addr_reg_1052_reg[10:0]' into 'lineBuffer_0_addr_reg_1042_reg[10:0]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:1401]
-INFO: [Synth 8-4471] merging register 'tmp_41_cast_reg_1062_reg[6:0]' into 'tmp_37_reg_1057_reg[6:0]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2282]
-INFO: [Synth 8-4471] merging register 'ap_reg_pp0_iter1_row_assign_cast5_reg_1105_reg[31:11]' into 'row_assign_cast5_reg_1105_reg[31:11]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2333]
-INFO: [Synth 8-4471] merging register 'ap_reg_pp0_iter2_row_assign_cast5_reg_1105_reg[31:11]' into 'row_assign_cast5_reg_1105_reg[31:11]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2334]
-INFO: [Synth 8-4471] merging register 'ap_reg_pp0_iter3_row_assign_cast5_reg_1105_reg[31:11]' into 'row_assign_cast5_reg_1105_reg[31:11]' [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2335]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2232]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2252]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter_gmem2_m_axi.v:589]
+INFO: [Synth 8-4471] merging register 'lineBuffer_1_addr_2_reg_1152_reg[10:0]' into 'lineBuffer_0_addr_2_reg_1146_reg[10:0]' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1256]
+INFO: [Synth 8-4471] merging register 'lineBuffer_2_addr_1_reg_1158_reg[10:0]' into 'lineBuffer_0_addr_2_reg_1146_reg[10:0]' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1257]
+INFO: [Synth 8-4471] merging register 'lineBuffer_3_addr_1_reg_1164_reg[10:0]' into 'lineBuffer_0_addr_2_reg_1146_reg[10:0]' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1258]
+INFO: [Synth 8-4471] merging register 'lineBuffer_1_addr_reg_1065_reg[10:0]' into 'lineBuffer_0_addr_reg_1060_reg[10:0]' [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1266]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:1992]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2002]
 INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
-INFO: [Synth 8-5546] ROM "tmp_2_fu_485_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_1_fu_549_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "tmp_fu_451_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "tmp_8_fu_627_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "grp_fu_379_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "grp_fu_386_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_47_fu_639_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_48_fu_645_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_2_fu_462_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_1_fu_534_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "tmp_fu_423_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "tmp_8_fu_624_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "cond_fu_435_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "tmp_4_fu_552_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_3_fu_546_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_s_fu_636_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_7_fu_642_p2" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -667,8 +674,9 @@ INFO: [Synth 8-5546] ROM "tmp_48_fu_645_p2" won't be mapped to RAM because it is
                   WRRESP |                             1000 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'sobel_filter_AXILiteS_s_axi'
+INFO: [Synth 8-3971] The signal ram_reg was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:49 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:01:00 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -681,13 +689,11 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 14    
-	   3 Input     32 Bit       Adders := 2     
-	   2 Input     24 Bit       Adders := 1     
-	   3 Input     23 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 15    
+	   3 Input     23 Bit       Adders := 2     
 	   3 Input     14 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 4     
-	   2 Input     11 Bit       Adders := 5     
+	   2 Input     11 Bit       Adders := 6     
 	   5 Input     11 Bit       Adders := 1     
 	   6 Input     11 Bit       Adders := 1     
 	   2 Input      9 Bit       Adders := 5     
@@ -700,30 +706,26 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit       Adders := 4     
 +---XORs : 
 	   2 Input      8 Bit         XORs := 1     
-	   2 Input      2 Bit         XORs := 1     
-	   2 Input      1 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 3     
 +---Registers : 
 	               64 Bit    Registers := 12    
 	               36 Bit    Registers := 3     
 	               35 Bit    Registers := 6     
 	               34 Bit    Registers := 2     
-	               32 Bit    Registers := 40    
+	               32 Bit    Registers := 34    
 	               30 Bit    Registers := 1     
-	               25 Bit    Registers := 1     
-	               17 Bit    Registers := 1     
-	               15 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
 	               12 Bit    Registers := 2     
-	               11 Bit    Registers := 22    
+	               11 Bit    Registers := 13    
 	               10 Bit    Registers := 10    
 	                9 Bit    Registers := 5     
-	                8 Bit    Registers := 45    
-	                7 Bit    Registers := 1     
+	                8 Bit    Registers := 43    
 	                6 Bit    Registers := 4     
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 6     
 	                3 Bit    Registers := 9     
 	                2 Bit    Registers := 28    
-	                1 Bit    Registers := 141   
+	                1 Bit    Registers := 119   
 +---RAMs : 
 	              15K Bit         RAMs := 4     
 	               9K Bit         RAMs := 1     
@@ -734,14 +736,18 @@ Detailed RTL Component Info :
 	   2 Input     36 Bit        Muxes := 1     
 	   2 Input     35 Bit        Muxes := 2     
 	   2 Input     34 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 18    
-	   3 Input     15 Bit        Muxes := 2     
-	  16 Input     15 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 17    
+	   2 Input     26 Bit        Muxes := 1     
+	  27 Input     26 Bit        Muxes := 1     
+	   3 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
 	   2 Input     13 Bit        Muxes := 1     
 	   4 Input     12 Bit        Muxes := 4     
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 8     
 	   3 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 7     
 	   2 Input     10 Bit        Muxes := 9     
 	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 47    
@@ -755,7 +761,7 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 56    
 	   5 Input      2 Bit        Muxes := 18    
 	   5 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 142   
+	   2 Input      1 Bit        Muxes := 144   
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -1093,7 +1099,7 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 2     
 +---RAMs : 
 	              15K Bit         RAMs := 1     
-Module sobel_filter_lineeOg_ram 
+Module sobel_filter_linedEe_ram 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 2     
@@ -1106,12 +1112,10 @@ Detailed RTL Component Info :
 Module sobel_filter 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
-	   3 Input     32 Bit       Adders := 2     
-	   2 Input     24 Bit       Adders := 1     
-	   3 Input     23 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     23 Bit       Adders := 2     
 	   3 Input     14 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 5     
+	   2 Input     11 Bit       Adders := 6     
 	   5 Input     11 Bit       Adders := 1     
 	   6 Input     11 Bit       Adders := 1     
 	   3 Input      9 Bit       Adders := 1     
@@ -1121,31 +1125,32 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit       Adders := 3     
 +---XORs : 
 	   2 Input      8 Bit         XORs := 1     
-	   2 Input      2 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 10    
+	               32 Bit    Registers := 4     
 	               30 Bit    Registers := 1     
-	               25 Bit    Registers := 1     
-	               17 Bit    Registers := 1     
-	               15 Bit    Registers := 1     
-	               11 Bit    Registers := 22    
+	               26 Bit    Registers := 1     
+	               11 Bit    Registers := 13    
 	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 15    
-	                7 Bit    Registers := 1     
+	                8 Bit    Registers := 13    
 	                2 Bit    Registers := 7     
-	                1 Bit    Registers := 35    
+	                1 Bit    Registers := 13    
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
-	   3 Input     15 Bit        Muxes := 2     
-	  16 Input     15 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	  27 Input     26 Bit        Muxes := 1     
+	   3 Input     22 Bit        Muxes := 1     
+	   2 Input     21 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
 	   2 Input     13 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
-	   2 Input     11 Bit        Muxes := 8     
 	   3 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 7     
 	   2 Input      8 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 17    
+	   2 Input      1 Bit        Muxes := 19    
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -1161,36 +1166,30 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2172]
-INFO: [Synth 8-5544] ROM "tmp_fu_451_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "tmp_1_fu_549_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_8_fu_627_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_2_fu_485_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "grp_fu_386_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "grp_fu_379_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_47_fu_639_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_48_fu_645_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/1ac4/hdl/verilog/sobel_filter.v:2172]
-INFO: [Synth 8-5546] ROM "grp_fu_386_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "grp_fu_379_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_8_fu_627_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_47_fu_639_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_48_fu_645_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_2_fu_485_p2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tmp_1_fu_549_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2016]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2022]
+INFO: [Synth 8-5544] ROM "tmp_fu_423_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cond_fu_435_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "tmp_2_fu_462_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_1_fu_534_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_8_fu_624_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_7_fu_642_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_4_fu_552_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_3_fu_546_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_s_fu_636_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2016]
+INFO: [Synth 8-41] '+' operator could not be merged with '+' operator due to loss of accuracy [c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ipshared/8b61/hdl/verilog/sobel_filter.v:2022]
+INFO: [Synth 8-5546] ROM "tmp_2_fu_462_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_1_fu_534_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_8_fu_624_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_7_fu_642_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_4_fu_552_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_3_fu_546_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_s_fu_636_p2" won't be mapped to RAM because it is too sparse
 warning: Removed RAM bus_write/buff_wdata/mem_reg due to inactive write enable
 WARNING: [Synth 8-5730] RAM bus_write/buff_wdata/mem_reg got removed due to cross hierarchy optimization. 
-INFO: [Synth 8-3886] merging instance 'inst/tmp_41_cast_reg_1062_reg[22]' (FDE) to 'inst/tmp_41_cast_reg_1062_reg[23]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_41_reg_1081_reg[0]' (FDE) to 'inst/tmp_19_1_t_reg_1092_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_s_reg_1015_reg[31]' (FD) to 'inst/tmp_37_reg_1057_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_s_reg_1015_reg[30]' (FD) to 'inst/tmp_37_reg_1057_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_37_reg_1057_reg[0]' (FD) to 'inst/tmp_37_reg_1057_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_37_reg_1057_reg[1]' (FD) to 'inst/tmp_37_reg_1057_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_37_reg_1057_reg[2]' (FD) to 'inst/tmp_37_reg_1057_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_37_reg_1057_reg[3]' (FD) to 'inst/tmp_37_reg_1057_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_37_reg_1057_reg[4]' (FD) to 'inst/tmp_37_reg_1057_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_37_reg_1057_reg[5]' (FD) to 'inst/tmp_37_reg_1057_reg[6]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\tmp_37_reg_1057_reg[6] )
+INFO: [Synth 8-3971] The signal lineBuffer_0_U/sobel_filter_linebkb_ram_U/ram_reg was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal lineBuffer_1_U/sobel_filter_linebkb_ram_U/ram_reg was recognized as a true dual port RAM template.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_read/rs_rreq/data_p2_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_read/rs_rreq/data_p2_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_read/rs_rreq/data_p2_reg[2] )
@@ -1253,69 +1252,71 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobe
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_read/rs_rreq/data_p2_reg[34] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_read/rs_rreq/data_p2_reg[33] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_read/rs_rreq/data_p2_reg[32] )
-INFO: [Synth 8-3886] merging instance 'inst/tmp_19_2_t_reg_1098_reg[0]' (FDE) to 'inst/tmp_19_0_t_reg_1085_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[63]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[61]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[62]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[60]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[59]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[58]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[57]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[56]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[55]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[54]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[53]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[52]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[51]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[50]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[49]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[48]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[47]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[46]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[45]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[44]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[43]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[42]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[41]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[40]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[39]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[38]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[37]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[36]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[35]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[34]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_write/rs_wreq/data_p2_reg[33] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_write/rs_wreq/data_p2_reg[32] )
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[63]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[61]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[62]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[60]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[59]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[58]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[57]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[56]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[55]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[54]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[53]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[52]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[51]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[50]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[49]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[48]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[47]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[46]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[45]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[44]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[43]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_19_0_t_reg_1106_reg[0]' (FDE) to 'inst/tmp_19_2_t_reg_1113_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[63]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[61]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[62]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[60]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[59]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[58]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[57]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[56]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[55]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[54]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[53]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[52]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[51]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[50]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[49]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[48]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[47]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[46]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[45]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[44]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[43]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[42]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[39]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[41]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[39]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[40]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[39]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_write/rs_wreq/data_p2_reg[39] )
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[38]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[37]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[36]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[35]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[34]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[33]' (FDE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/rs_wreq/data_p2_reg[32]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem2_m_axi_U/\bus_write/rs_wreq/data_p2_reg[32] )
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[63]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[61]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[62]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[60]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[59]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[58]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[57]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[56]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[55]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[54]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[53]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[52]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[51]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[50]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[49]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[48]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[47]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[46]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[45]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[44]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[43]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[42]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[39]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[41]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[39]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[40]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[39]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[38]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[37]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[36]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[35]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[34]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_read/rs_rreq/data_p2_reg[33] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_read/rs_rreq/data_p2_reg[39] )
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[38]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[37]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[36]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[35]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[34]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[33]' (FDE) to 'inst/sobel_filter_gmem_m_axi_U/bus_read/rs_rreq/data_p2_reg[32]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_read/rs_rreq/data_p2_reg[32] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_write/rs_wreq/data_p2_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_write/rs_wreq/data_p2_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_write/rs_wreq/data_p2_reg[2] )
@@ -1351,14 +1352,14 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobe
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_write/rs_wreq/data_p2_reg[63] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/sobel_filter_gmem_m_axi_U/\bus_write/rs_wreq/data_p2_reg[61] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[0]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[0]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[1]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[1]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[2]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[2]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[3]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[3]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[4]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[4]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[5]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[5]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[6]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[6]'
-INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1293_reg[7]' (FDE) to 'inst/y_weight_2_2_reg_1282_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[7]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[6]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[5]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[0]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[1]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[2]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[3]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/tmp_51_reg_1280_reg[4]' (FDE) to 'inst/y_weight_2_2_reg_1269_reg[4]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_read/start_addr_reg[0]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_read/start_addr_reg[1]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/start_addr_reg[0]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/start_addr_reg[1]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[32]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[33]'
@@ -1381,6 +1382,15 @@ INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[14]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[22]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[15]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[23]'
 INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[16]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[17]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[18]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[19]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[20]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[21]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[22]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[23]' (FDRE) to 'inst/sobel_filter_gmem2_m_axi_U/bus_write/buff_wdata/q_tmp_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_write/buff_wdata/q_tmp_reg[8]' (FDRE) to 'inst/sobel_filter_gmem_m_axi_U/bus_write/buff_wdata/q_tmp_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/sobel_filter_gmem_m_axi_U/bus_writei_3_2/bus_write/buff_wdata/q_buf_reg[8]' (FD) to 'inst/sobel_filter_gmem_m_axi_U/bus_writei_3_2/bus_write/buff_wdata/q_buf_reg[0]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (wreq_throttl/throttl_cnt_reg[7]) is unused and will be removed from module sobel_filter_gmem_m_axi.
 WARNING: [Synth 8-3332] Sequential element (wreq_throttl/throttl_cnt_reg[6]) is unused and will be removed from module sobel_filter_gmem_m_axi.
@@ -1484,7 +1494,7 @@ WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p2_reg[4]) is
 WARNING: [Synth 8-3332] Sequential element (bus_write/rs_wreq/data_p2_reg[3]) is unused and will be removed from module sobel_filter_gmem_m_axi.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:01:00 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:01:12 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1496,10 +1506,10 @@ Block RAM: Preliminary Mapping  Report (see note below)
 +------------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |sobel_filter_gmem_m_axi_buffer__parameterized0: | mem_reg    | 256 x 35(READ_FIRST)   | W |   | 256 x 35(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
 |sobel_filter_gmem2_m_axi_buffer:                | mem_reg    | 256 x 36(READ_FIRST)   | W |   | 256 x 36(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
-|sobel_filter_linebkb_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|sobel_filter_linebkb_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|sobel_filter_linebkb_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
-|sobel_filter_lineeOg_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|sobel_filter_linebkb_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   | W | R | Port A and B     | 1      | 0      | 
+|sobel_filter_linebkb_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   | W | R | Port A and B     | 1      | 0      | 
+|sobel_filter_linedEe_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|sobel_filter_linedEe_ram:                       | ram_reg    | 2 K x 8(WRITE_FIRST)   | W | R | 2 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
 +------------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
@@ -1516,13 +1526,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:01:14 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:01:27 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:01:15 . Memory (MB): peak = 739.672 ; gain = 475.512
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:01:28 . Memory (MB): peak = 737.582 ; gain = 472.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1539,11 +1549,12 @@ INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_0_U/sobel_filte
 INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_0_U/sobel_filter_linebkb_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_1_U/sobel_filter_linebkb_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_1_U/sobel_filter_linebkb_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_2_U/sobel_filter_linebkb_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_2_U/sobel_filter_linebkb_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
-INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_3_U/sobel_filter_lineeOg_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_2_U/sobel_filter_linedEe_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_2_U/sobel_filter_linedEe_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_3_U/sobel_filter_linedEe_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/lineBuffer_3_U/sobel_filter_linedEe_ram_U/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:01:17 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:01:30 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1567,7 +1578,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:31 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1580,7 +1591,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:31 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1592,42 +1603,37 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:31 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:31 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:32 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:32 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Static Shift Register Report:
-+-------------+----------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name  | RTL Name                                           | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+-------------+----------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|sobel_filter | ap_reg_pp0_iter3_tmp_46_reg_1134_reg[0]            | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|sobel_filter | ap_reg_pp0_iter3_tmp_49_reg_1138_reg[0]            | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|sobel_filter | ap_reg_pp0_iter6_gmem2_addr_reg_1119_reg[29]       | 7      | 30    | NO           | YES                | YES               | 30     | 0       | 
-|sobel_filter | ap_reg_pp0_iter3_row_assign_cast5_reg_1105_reg[10] | 4      | 11    | NO           | NO                 | YES               | 11     | 0       | 
-|sobel_filter | ap_reg_pp0_iter3_j_reg_1128_reg[10]                | 3      | 11    | NO           | NO                 | YES               | 11     | 0       | 
-|sobel_filter | ap_reg_pp0_iter4_tmp_10_reg_1142_reg[10]           | 4      | 11    | NO           | NO                 | YES               | 11     | 0       | 
-|sobel_filter | ap_CS_fsm_reg[8]                                   | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-+-------------+----------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
++-------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name  | RTL Name          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|sobel_filter | ap_CS_fsm_reg[17] | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|sobel_filter | ap_CS_fsm_reg[8]  | 6      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++-------------+-------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 
 Dynamic Shift Register Report:
@@ -1661,76 +1667,76 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |CARRY4     |   131|
-|2     |LUT1       |   148|
+|1     |CARRY4     |   114|
+|2     |LUT1       |   114|
 |3     |LUT2       |   281|
-|4     |LUT3       |   443|
-|5     |LUT4       |   176|
-|6     |LUT5       |   191|
-|7     |LUT6       |   420|
+|4     |LUT3       |   418|
+|5     |LUT4       |   201|
+|6     |LUT5       |   190|
+|7     |LUT6       |   377|
 |8     |RAMB18E1   |     2|
 |9     |RAMB18E1_1 |     4|
-|10    |SRL16E     |   148|
-|11    |FDRE       |  1661|
-|12    |FDSE       |    15|
+|10    |SRL16E     |    86|
+|11    |FDRE       |  1553|
+|12    |FDSE       |     8|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+-----------------------------------+---------------------------------------------------+------+
 |      |Instance                           |Module                                             |Cells |
 +------+-----------------------------------+---------------------------------------------------+------+
-|1     |top                                |                                                   |  3620|
-|2     |  inst                             |sobel_filter                                       |  3620|
-|3     |    lineBuffer_0_U                 |sobel_filter_linebkb                               |     1|
-|4     |      sobel_filter_linebkb_ram_U   |sobel_filter_linebkb_ram_3                         |     1|
-|5     |    lineBuffer_1_U                 |sobel_filter_linebkb_0                             |     9|
-|6     |      sobel_filter_linebkb_ram_U   |sobel_filter_linebkb_ram_2                         |     9|
-|7     |    lineBuffer_2_U                 |sobel_filter_linebkb_1                             |    23|
-|8     |      sobel_filter_linebkb_ram_U   |sobel_filter_linebkb_ram                           |    23|
-|9     |    lineBuffer_3_U                 |sobel_filter_lineeOg                               |   101|
-|10    |      sobel_filter_lineeOg_ram_U   |sobel_filter_lineeOg_ram                           |   101|
+|1     |top                                |                                                   |  3348|
+|2     |  inst                             |sobel_filter                                       |  3348|
+|3     |    lineBuffer_0_U                 |sobel_filter_linebkb                               |     2|
+|4     |      sobel_filter_linebkb_ram_U   |sobel_filter_linebkb_ram_3                         |     2|
+|5     |    lineBuffer_1_U                 |sobel_filter_linebkb_0                             |    37|
+|6     |      sobel_filter_linebkb_ram_U   |sobel_filter_linebkb_ram                           |    37|
+|7     |    lineBuffer_2_U                 |sobel_filter_linedEe                               |     1|
+|8     |      sobel_filter_linedEe_ram_U   |sobel_filter_linedEe_ram_2                         |     1|
+|9     |    lineBuffer_3_U                 |sobel_filter_linedEe_1                             |    94|
+|10    |      sobel_filter_linedEe_ram_U   |sobel_filter_linedEe_ram                           |    94|
 |11    |    sobel_filter_AXILiteS_s_axi_U  |sobel_filter_AXILiteS_s_axi                        |   253|
-|12    |    sobel_filter_gmem2_m_axi_U     |sobel_filter_gmem2_m_axi                           |  1009|
+|12    |    sobel_filter_gmem2_m_axi_U     |sobel_filter_gmem2_m_axi                           |   984|
 |13    |      bus_read                     |sobel_filter_gmem2_m_axi_read                      |    39|
 |14    |        buff_rdata                 |sobel_filter_gmem2_m_axi_buffer__parameterized0    |    30|
 |15    |        rs_rdata                   |sobel_filter_gmem2_m_axi_reg_slice__parameterized0 |     6|
-|16    |      bus_write                    |sobel_filter_gmem2_m_axi_write                     |   951|
-|17    |        buff_wdata                 |sobel_filter_gmem2_m_axi_buffer                    |   162|
-|18    |        \bus_equal_gen.fifo_burst  |sobel_filter_gmem2_m_axi_fifo                      |    83|
+|16    |      bus_write                    |sobel_filter_gmem2_m_axi_write                     |   926|
+|17    |        buff_wdata                 |sobel_filter_gmem2_m_axi_buffer                    |   172|
+|18    |        \bus_equal_gen.fifo_burst  |sobel_filter_gmem2_m_axi_fifo                      |    86|
 |19    |        fifo_resp                  |sobel_filter_gmem2_m_axi_fifo__parameterized1      |    26|
-|20    |        fifo_resp_to_user          |sobel_filter_gmem2_m_axi_fifo__parameterized2      |    74|
-|21    |        fifo_wreq                  |sobel_filter_gmem2_m_axi_fifo__parameterized0      |    87|
-|22    |        rs_wreq                    |sobel_filter_gmem2_m_axi_reg_slice                 |   100|
+|20    |        fifo_resp_to_user          |sobel_filter_gmem2_m_axi_fifo__parameterized2      |    19|
+|21    |        fifo_wreq                  |sobel_filter_gmem2_m_axi_fifo__parameterized0      |    94|
+|22    |        rs_wreq                    |sobel_filter_gmem2_m_axi_reg_slice                 |   103|
 |23    |      wreq_throttl                 |sobel_filter_gmem2_m_axi_throttl                   |    19|
-|24    |    sobel_filter_gmem_m_axi_U      |sobel_filter_gmem_m_axi                            |  1095|
-|25    |      bus_read                     |sobel_filter_gmem_m_axi_read                       |  1095|
-|26    |        buff_rdata                 |sobel_filter_gmem_m_axi_buffer__parameterized0     |   228|
-|27    |        \bus_wide_gen.fifo_burst   |sobel_filter_gmem_m_axi_fifo                       |    92|
+|24    |    sobel_filter_gmem_m_axi_U      |sobel_filter_gmem_m_axi                            |  1118|
+|25    |      bus_read                     |sobel_filter_gmem_m_axi_read                       |  1118|
+|26    |        buff_rdata                 |sobel_filter_gmem_m_axi_buffer__parameterized0     |   243|
+|27    |        \bus_wide_gen.fifo_burst   |sobel_filter_gmem_m_axi_fifo                       |    82|
 |28    |        fifo_rctl                  |sobel_filter_gmem_m_axi_fifo__parameterized1       |    19|
-|29    |        fifo_rreq                  |sobel_filter_gmem_m_axi_fifo__parameterized0       |   133|
-|30    |        rs_rdata                   |sobel_filter_gmem_m_axi_reg_slice__parameterized0  |    59|
-|31    |        rs_rreq                    |sobel_filter_gmem_m_axi_reg_slice                  |   115|
+|29    |        fifo_rreq                  |sobel_filter_gmem_m_axi_fifo__parameterized0       |   130|
+|30    |        rs_rdata                   |sobel_filter_gmem_m_axi_reg_slice__parameterized0  |    53|
+|31    |        rs_rreq                    |sobel_filter_gmem_m_axi_reg_slice                  |   142|
 +------+-----------------------------------+---------------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:01:18 . Memory (MB): peak = 753.250 ; gain = 489.090
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:32 . Memory (MB): peak = 745.391 ; gain = 480.633
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1509 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:45 . Memory (MB): peak = 753.250 ; gain = 156.613
-Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:01:19 . Memory (MB): peak = 753.250 ; gain = 489.090
+Synthesis finished with 0 errors, 0 critical warnings and 1480 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:49 . Memory (MB): peak = 745.391 ; gain = 148.230
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:01:32 . Memory (MB): peak = 745.391 ; gain = 480.633
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 137 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 120 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-341 Infos, 314 Warnings, 0 Critical Warnings and 0 Errors encountered.
+344 Infos, 314 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:22 . Memory (MB): peak = 753.250 ; gain = 492.715
-INFO: [Common 17-1381] The checkpoint 'C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/TEMP/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/design_1_sobel_filter_0_0.xci
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:34 . Memory (MB): peak = 745.391 ; gain = 484.762
+INFO: [Common 17-1381] The checkpoint 'C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/TEMP/INF3610/Labo4/lab4/lab4.srcs/sources_1/bd/design_1/ip/design_1_sobel_filter_0_0_1/design_1_sobel_filter_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 30 cell refs.
-INFO: [Common 17-1381] The checkpoint 'C:/TEMP/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 753.250 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Nov 24 18:44:24 2017...
+INFO: [Common 17-1381] The checkpoint 'C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 745.391 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 27 12:57:51 2017...

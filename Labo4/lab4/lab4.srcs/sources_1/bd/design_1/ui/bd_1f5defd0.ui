@@ -33,8 +33,8 @@ preplace netloc ps7_0_axi_periph_M01_AXI 1 2 2 690 220 NJ
 preplace netloc zed_hdmi_display_hdmio_io 1 4 2 1450J 410 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
 preplace netloc zed_hdmi_display_M00_AXI 1 4 1 1400
-preplace netloc axi_smc_1_M00_AXI 1 4 1 1430
 preplace netloc zed_hdmi_iic_0_IIC 1 5 1 NJ
+preplace netloc axi_smc_1_M00_AXI 1 4 1 1430
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 270 380 280 NJ 280 1090 410 1440 420 1990
 preplace netloc ps7_0_axi_periph_M00_AXI 1 2 3 NJ 430 NJ 430 1410
 preplace netloc rst_ps7_0_76M_interconnect_aresetn 1 1 1 N

@@ -3710,7 +3710,7 @@ lue 0} integer {signed {attribs {resolve_type immediate dependency {} format boo
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_lineeOg.v</spirit:name>
+        <spirit:name>hdl/verilog/sobel_filter_linedEe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -3746,7 +3746,7 @@ lue 0} integer {signed {attribs {resolve_type immediate dependency {} format boo
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/sobel_filter_lineeOg.v</spirit:name>
+        <spirit:name>hdl/verilog/sobel_filter_linedEe.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -3784,7 +3784,7 @@ lue 0} integer {signed {attribs {resolve_type immediate dependency {} format boo
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_lineeOg.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/sobel_filter_linedEe.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -3821,7 +3821,7 @@ lue 0} integer {signed {attribs {resolve_type immediate dependency {} format boo
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/sobel_filter_lineeOg.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/sobel_filter_linedEe.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -4136,7 +4136,7 @@ lue 0} integer {signed {attribs {resolve_type immediate dependency {} format boo
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">4180349</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="29">4174340</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -4153,8 +4153,8 @@ lue 0} integer {signed {attribs {resolve_type immediate dependency {} format boo
       </xilinx:taxonomies>
       <xilinx:displayName>Sobel</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1711241841</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-24T23:41:33Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1711271254</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-11-27T17:54:25Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2017.2</xilinx:xilinxVersion>

@@ -164,57 +164,5 @@ void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned int out_pix
 		}
 		lastLine++;
 	}
-
-	/*
-	for (unsigned int i = 0; i < IMG_HEIGHT; i++) {
-		for (unsigned int j = 0; j < IMG_WIDTH; j++) {
-#pragma HLS pipeline
-#pragma HLS loop_flatten off
-			if (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1) {
-				out_pix[i][j] = 0;
-			}
-			else {
-				unsigned int val = (unsigned int)sobel_operator_cache((lastLine - 2)&CACHE_MOD_MASK, j, lineBuffer);
-				out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
-				lineBuffer[lastLine&CACHE_MOD_MASK][j] = inter_pix[lastLine][j];
-			}
-		}
-		if (i!=0 && i!=IMG_HEIGHT -1) {
-			lastLine++;
-		}
-	}
-	*/
-
-
-	/*
-	for (unsigned int i = 0; i < IMG_HEIGHT; i++) {
-		for (unsigned int j = 0; j < IMG_WIDTH; j++) {
-			if (i==0 || i==IMG_HEIGHT - 1 || j==0 || j==IMG_WIDTH - 1) {
-				out_pix[i][j] = 0;
-			}
-			else {
-				unsigned int val = (unsigned int)sobel_operator(i, j, inter_pix);
-
-				OneToFourPixels four;
-				for (int j = 0; j < 4; j++) {
-					four.pix[j] = val;
-				}
-
-				out_pix[i][j] = val << 24 | val << 16 | val << 8 | val;
-			}
-		}
-	}
-	*/
-	// À remplacer par votre fonction *après* avoir répondu aux questions initiales
-/*
-IMG: for (int i = 0; i < IMG_WIDTH * IMG_HEIGHT; ++i) {
-#pragma HLS pipeline
-		uint8_t val = inter_pix[i];
-		OneToFourPixels fourWide;
-OneTo4:	for (int j = 0; j < 4; ++j)
-			fourWide.pix[j] = val;
-		out_pix[i] = fourWide.full;
-	}
-*/
 }
 

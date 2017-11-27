@@ -170,7 +170,7 @@ int main()
 	hdmiInit(&hdmiConfig);
 
 	FILINFO fInfo = { 0 };
-	uint8_t * data = getFileContents("a9s.rgb", &fInfo);
+	uint8_t * data = getFileContents("a9.rgb", &fInfo);
 	Xil_DCacheFlush();		// On flush la cache pour s'assurer que tout le fichier retourner est dans la DDR et non seulement dans la cache.
 
 	// À compléter: Initialisation du filtre de Sobel matériel
