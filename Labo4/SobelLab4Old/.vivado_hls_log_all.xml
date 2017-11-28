@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T22:29:25.812-0500"/>
+        <logs message="ERROR: [SIM 211-100] CSim file generation failed with errors." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T22:25:34.936-0500"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T22:23:48.059-0500"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T22:23:09.254-0500"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:161) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'lineBuffer_0'." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T22:22:10.520-0500" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

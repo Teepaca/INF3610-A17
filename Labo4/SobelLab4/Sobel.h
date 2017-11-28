@@ -12,4 +12,4 @@
 
 uint8_t sobel_operator(const int col, const int row, uint8_t image[IMG_HEIGHT][IMG_WIDTH]);
 uint8_t sobel_operator_cache(const int col, const int row, uint8_t cache[CACHE_HEIGHT][CACHE_WIDTH]);
-void sobel_filter(uint8_t inter_pix[IMG_HEIGHT][IMG_WIDTH], unsigned int out_pix[IMG_HEIGHT][IMG_WIDTH]);
+void sobel_filter(uint8_t* inter_pix, unsigned int* out_pix);

@@ -1,7 +1,7 @@
 <profile>
 
 <ReportVersion>
-<Version>2017.2</Version>
+<Version>2017.3</Version>
 </ReportVersion>
 
 <UserAssignments>
@@ -21,11 +21,11 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>4174340</Best-caseLatency>
-<Average-caseLatency>4174340</Average-caseLatency>
-<Worst-caseLatency>4174340</Worst-caseLatency>
-<Interval-min>4174341</Interval-min>
-<Interval-max>4174341</Interval-max>
+<Best-caseLatency>4173260</Best-caseLatency>
+<Average-caseLatency>4173260</Average-caseLatency>
+<Worst-caseLatency>4173260</Worst-caseLatency>
+<Interval-min>4173261</Interval-min>
+<Interval-max>4173261</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <LoadCache>
@@ -40,13 +40,13 @@
 </LoadCache>
 <ImageX>
 <TripCount>1080</TripCount>
-<Latency>4166640</Latency>
-<IterationLatency>3858</IterationLatency>
+<Latency>4165560</Latency>
+<IterationLatency>3857</IterationLatency>
 <ImageY>
 <TripCount>1920</TripCount>
-<Latency>3844</Latency>
+<Latency>3843</Latency>
 <PipelineII>2</PipelineII>
-<PipelineDepth>7</PipelineDepth>
+<PipelineDepth>6</PipelineDepth>
 </ImageY>
 </ImageX>
 </SummaryOfLoopLatency>
@@ -55,8 +55,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>8</BRAM_18K>
-<FF>3449</FF>
-<LUT>2550</LUT>
+<FF>1654</FF>
+<LUT>2777</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 <AvailableResources>

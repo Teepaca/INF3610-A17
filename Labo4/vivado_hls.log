@@ -1,19 +1,14 @@
-INFO: [HLS 200-10] Running 'C:/Logiciels/Xilinx/Vivado_HLS/2017.2/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'feboug' on host 'l3712-11' (Windows NT_amd64 version 6.2) on Mon Nov 27 12:54:14 -0500 2017
-INFO: [HLS 200-10] In directory 'C:/TEMP/INF3610/Labo4'
-INFO: [HLS 200-10] Opening project 'C:/TEMP/INF3610/Labo4/SobelLab4'.
-INFO: [HLS 200-10] Opening solution 'C:/TEMP/INF3610/Labo4/SobelLab4/solution1'.
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Félix' on host 'hurricane-pc' (Windows NT_amd64 version 6.2) on Mon Nov 27 22:34:30 -0500 2017
+INFO: [HLS 200-10] In directory 'D:/Polytechnique/A17/INF3610/INF3610/Labo4'
+INFO: [HLS 200-10] Opening project 'D:/Polytechnique/A17/INF3610/INF3610/Labo4/SobelLab4'.
+INFO: [HLS 200-10] Opening solution 'D:/Polytechnique/A17/INF3610/INF3610/Labo4/SobelLab4/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
-INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
-
-****** Vivado v2017.2 (64-bit)
-  **** SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
-  **** IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Logiciels/Xilinx/Vivado/2017.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 27 12:54:25 2017...
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+make: `csim.exe' is up to date.
+Simulation Complete
+Output image matches the reference output image
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************

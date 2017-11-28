@@ -12,7 +12,7 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:161) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T12:53:31.816-0500" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('lineBuffer_0_load', SobelLab4/Sobel.cpp:111->SobelLab4/Sobel.cpp:161) on array 'lineBuffer[0]', SobelLab4/Sobel.cpp:148 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'lineBuffer_0'." projectName="SobelLab4" solutionName="solution1" date="2017-11-27T22:34:20.154-0500" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

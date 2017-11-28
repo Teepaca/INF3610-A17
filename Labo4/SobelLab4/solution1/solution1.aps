@@ -1,4 +1,7 @@
 <solution AutoPilot="com.autoesl.autopilot.solution">
+    <checksum>
+        <value string="false"/>
+    </checksum>
     <downStreamTool>
         <DownStreamTool name="vivado"/>
     </downStreamTool>
@@ -41,7 +44,7 @@
         </UIAutoSimConf>
     </UIConfigurations>
     <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="true" rtlCombo="verilog">
-        <Format description="Sobel" display_name="Sobel" formatName="ip_catalog" vendor="polymtl.ca" library="" version="1.0" driver_input_dir="" taxonomy=""/>
+        <Format description="Sobel" display_name="Sobel" formatName="ip_catalog" vendor="polymtl.ca"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
         <Format formatName="syn_dcp"/>
