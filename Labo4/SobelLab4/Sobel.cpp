@@ -35,9 +35,9 @@ uint8_t sobel_operator_cache(const int col, const int row, uint8_t cache[CACHE_H
 	//Compute approximation of the gradients in the X-Y direction
 
 	SobelX : for (int i = 0; i < 3; i++) {
-#pragma HLS unroll
+//#pragma HLS unroll (le pipeline le fait)
 		SobelY : for (int j = 0; j < 3; j++) {
-#pragma HLS unroll
+//#pragma HLS unroll (le pipeline le fait)
 			// X direction gradient
 			x_weight = x_weight + cache[(col+i-1+CACHE_HEIGHT)&CACHE_MOD_MASK][row+j-1] * x_op[i][j];
 
