@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Nov 27 12:56:08 2017
-# Process ID: 6168
+# Start of session at: Fri Dec  1 11:59:24 2017
+# Process ID: 23448
 # Current directory: C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1
 # Command line: vivado.exe -log design_1_sobel_filter_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sobel_filter_0_0.tcl
 # Log file: C:/TEMP/INF3610/Labo4/lab4/lab4.runs/design_1_sobel_filter_0_0_synth_1/design_1_sobel_filter_0_0.vds

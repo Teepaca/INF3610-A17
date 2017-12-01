@@ -48,7 +48,7 @@
 
 
 // IP VLNV: polymtl.ca:hls:sobel_filter:1.0
-// IP Revision: 1711271254
+// IP Revision: 1712011154
 
 (* X_CORE_INFO = "sobel_filter,Vivado 2017.2" *)
 (* CHECK_LICENSE_TYPE = "design_1_sobel_filter_0_0,sobel_filter,{}" *)

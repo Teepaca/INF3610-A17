@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# 
+# Start of session at: Fri Dec  1 12:19:00 2017
+# Process ID: 23056
+# Current directory: C:/TEMP/INF3610/Labo4/lab4/lab4.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/TEMP/INF3610/Labo4/lab4/lab4.sdk/webtalk/webtalk.log
+# Journal file: C:/TEMP/INF3610/Labo4/lab4/lab4.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

@@ -54,8 +54,8 @@ set rc [catch {
   set_property webtalk.parent_dir C:/TEMP/INF3610/Labo4/lab4/lab4.cache/wt [current_project]
   set_property parent.project_path C:/TEMP/INF3610/Labo4/lab4/lab4.xpr [current_project]
   set_property ip_repo_paths {
+  c:/TEMP/INF3610/Labo4/SobelLab4
   C:/TEMP/INF3610/Labo4/ip_repo
-  C:/TEMP/INF3610/Labo4/SobelLab4
 } [current_project]
   set_property ip_output_repo C:/TEMP/INF3610/Labo4/lab4/lab4.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]

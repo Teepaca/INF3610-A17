@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Project Version="1" Minor="3" DIGEST="">
+	<TOOL_VERSION Version="2017.2"/>
+	<MODE Name="Post-Synthesis"/>
+	<SYSTEMINFO BOARD="em.avnet.com:zed:1.3" PART="xc7z020clg484-1" ARCH="zynq" PACKAGE="clg484" DEVICE="7z020" SPEED="-1" LUT="53200" FF="106400" BRAM="140" DSP="220"/>
+	<HIERARCHY Name="design_1_wrapper"/>
+	<File Type="HW_HANDOFF" Name="design_1.hwh" DESIGN_HIERARCHY="design_1_i" BD_TYPE="DEFAULT_BD"/>
+	<File Type="BD_TCL" Name="design_1_bd.tcl"/>
+	<File Type="PS_FSBL_INIT" Name="ps7_init.c"/>
+	<File Type="PS_FSBL_INIT" Name="ps7_init.h"/>
+	<File Type="PS_FSBL_INIT_GPL" Name="ps7_init_gpl.c"/>
+	<File Type="PS_FSBL_INIT_GPL" Name="ps7_init_gpl.h"/>
+	<File Type="PS_INIT_HELP" Name="ps7_init.html"/>
+	<File Type="PS_XMD_INIT" Name="ps7_init.tcl"/>
+	<File Type="HW_HANDOFF" Name="design_1_axi_smc_1_0.hwh" DESIGN_HIERARCHY="design_1_i/axi_smc_1/inst" BD_TYPE="SCOPED_BD"/>
+	<File Type="BD_TCL" Name="design_1_axi_smc_1_0_bd.tcl"/>
+	<File Type="HW_HANDOFF" Name="design_1_axi_smc_0.hwh" DESIGN_HIERARCHY="design_1_i/axi_smc/inst" BD_TYPE="SCOPED_BD"/>
+	<File Type="BD_TCL" Name="design_1_axi_smc_0_bd.tcl"/>
+	<File Type="BIT" Name="design_1_wrapper.bit"/>
+	<DRIVERS>
+		<DRIVER IP_VLNV="polymtl.ca:hls:sobel_filter:1.0">
+			<File PATH="drivers/sobel_filter_v1_0/data/sobel_filter.mdd"/>
+			<File PATH="drivers/sobel_filter_v1_0/data/sobel_filter.tcl"/>
+			<File PATH="drivers/sobel_filter_v1_0/src/Makefile"/>
+			<File PATH="drivers/sobel_filter_v1_0/src/xsobel_filter.c"/>
+			<File PATH="drivers/sobel_filter_v1_0/src/xsobel_filter.h"/>
+			<File PATH="drivers/sobel_filter_v1_0/src/xsobel_filter_hw.h"/>
+			<File PATH="drivers/sobel_filter_v1_0/src/xsobel_filter_linux.c"/>
+			<File PATH="drivers/sobel_filter_v1_0/src/xsobel_filter_sinit.c"/>
+		</DRIVER>
+	</DRIVERS>
+	<USEDRESOURCES LUT="0" FF="11900" BRAM="10" DSP="4"/>
+</Project>
+

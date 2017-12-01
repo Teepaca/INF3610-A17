@@ -103,10 +103,12 @@ uint8_t * getFileContents(const char* fileName, FILINFO * fInfo)
 {
 	// À implémenter
 	FATFS *fs;
-	FIL fp;
+	FIL fp;;
 	uint8_t * contents = NULL;
 	uint bytesRead;
 	FRESULT err;
+
+	xil_printf("Loading video file (this might take a minute if a9.rgb is selected)...");
 
 	fs = malloc(sizeof(FATFS));
 
